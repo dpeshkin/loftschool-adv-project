@@ -1,0 +1,66 @@
+.icon{
+	display: inline-block;
+	width: rem(30px);
+    height: rem(30px);
+    fill: currentColor;
+}
+
+.icon_scroll{
+    fill: #fff;
+}
+
+.social-icons{
+    display: flex;
+}
+
+.icon_social{
+    color: #5a5a5a;
+    width: rem(25px);
+    height: rem(25px);
+
+    &:hover{
+        color: $maintext;
+    }
+}
+
+.icon_phone{
+    width: rem(12px);
+    height: rem(12px);
+    margin-right: rem(7px);
+}
+
+.icon_burgers-small{
+    width: rem(50px);
+    height: rem(50px);
+}
+
+.icon_burgers{
+    width: rem(70px);
+    height: rem(70px);
+    position: relative;
+}
+
+.icon_slider-left{
+    transform: rotate(90deg);
+}
+
+.icon_slider-right{
+    transform: rotate(-90deg);
+}
+
+.icon_contents{
+    width: rem(40px);
+    margin-right: rem(20px);
+}
+
+.icon_orange{
+    fill: #e25028
+}
+
+.icon_yellow{
+    fill: #f8b43a
+}
+
+.icon_green{
+    fill: #8ac03e
+}
