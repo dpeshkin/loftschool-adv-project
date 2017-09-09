@@ -35,7 +35,7 @@ const paths = {
     },
     fonts: {
         src: 'src/fonts/**/*.*',
-        dest: 'dist/fonts/'
+        dest: 'dist/assets/fonts/'
     },
     icons: {
         src: 'src/svg-icons/*.svg',
@@ -151,6 +151,6 @@ exports.sprite = sprite; // этот модуль не будем вносить
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, scripts, html, images, fonts),
+    gulp.parallel(styles, html, scripts, images, fonts),
     gulp.parallel(watch, server)
 ));
