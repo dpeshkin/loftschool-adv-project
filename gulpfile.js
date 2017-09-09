@@ -16,26 +16,26 @@ const   gulp = require('gulp'),
 
 //paths
 const paths = {
-    root: './dist',
+    root: './docs',
     styles: {
         src: 'src/styles/**/*.scss',
-        dest: 'dist/assets/styles/'
+        dest: 'docs/assets/styles/'
     },
     scripts: {
         src: 'src/scripts/**/*.js',
-        dest: 'dist/assets/scripts/'
+        dest: 'docs/assets/scripts/'
     },
     templates: {
         src: 'src/templates/',
-        dest: 'dist/assets/'
+        dest: 'docs/assets/'
     },
     images: {
         src: 'src/images/**/*.{jpg,svg,png}',
-        dest: 'dist/assets/images/'
+        dest: 'docs/assets/images/'
     },
     fonts: {
         src: 'src/fonts/**/*.*',
-        dest: 'dist/assets/fonts/'
+        dest: 'docs/assets/fonts/'
     },
     icons: {
         src: 'src/svg-icons/*.svg',
@@ -83,13 +83,13 @@ function scripts() {
         .pipe(gulp.dest(paths.scripts.dest));
 }
 
-// dist images
+// docs images
 function images() {
     return gulp.src(paths.images.src)
           .pipe(gulp.dest(paths.images.dest));
 }
 
-// dist fonts
+// docs fonts
 function fonts() {
     return gulp.src(paths.fonts.src)
           .pipe(gulp.dest(paths.fonts.dest));
