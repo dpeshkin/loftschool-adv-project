@@ -11,7 +11,40 @@
   <body>
     <div class="wrapper">
       <section class="welcome">
-        <div class="contaner"><a class="btn btn_auth" href="#">Авторизоваться</a></div>
+        <div class="container">
+          <div class="welcome__auth"><a class="btn btn_auth" href="#">Авторизоваться</a></div>
+          <div class="welcome__main">
+            <div class="welcome__photo"><img src="/assets/images/myphoto.jpg"></div>
+            <div class="welcome__name">Дмитрий Пешкин</div>
+            <div class="welcome__caption">Личный сайт веб разработчика</div>
+            <div class="welcome__socials">
+              <ul class="social">
+                <li class="social__icon"><a class="social__link" href="https://vk.com/id5299005" target="_blank">
+                    <svg class="icon icon_welcome">
+                      <use xlink:href="/assets/images/icons/sprite.svg#vk"></use>
+                    </svg></a></li>
+                <li class="social__icon"><a class="social__link" href="https://github.com/ekb196" target="_blank">
+                    <svg class="icon icon_welcome">
+                      <use xlink:href="/assets/images/icons/sprite.svg#github"></use>
+                    </svg></a></li>
+                <li class="social__icon"><a class="social__link" href="" target="_blank">
+                    <svg class="icon icon_welcome">
+                      <use xlink:href="/assets/images/icons/sprite.svg#in"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+            <div class="welcome__buttons">
+              <ul class="nav">
+                <li class="nav__item"><a class="btn btn_welcome-nav" href="my-works.html">Мои работы</a></li>
+                <li class="nav__item"><a class="btn btn_welcome-nav" href="about.html">Обо мне</a></li>
+                <li class="nav__item"><a class="btn btn_welcome-nav" href="blog.html">Блог</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <footer class="footer footer__welcome"> 
+          <div class="footer__copyright">© Дмитрий Пешкин | создано в LoftSchool | 2017</div>
+        </footer>
       </section>
     </div>
     <script src="/assets/scripts/bundle.js" defer></script>

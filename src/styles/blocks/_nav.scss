@@ -1,0 +1,9 @@
+.nav{
+    display: flex;
+}
+
+.nav__item{
+    &:last-child a{
+        border-right: none;
+    }
+}

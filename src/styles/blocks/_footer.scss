@@ -1,0 +1,15 @@
+.footer{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px 20px;
+    color: $invertColor;
+    font-weight: 300;
+}
+
+.footer_welcome{
+    padding-bottom: 40px;
+}

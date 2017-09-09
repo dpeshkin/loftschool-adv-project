@@ -1,5 +1,50 @@
 .welcome{
     background: url(../images/welcome-bg.jpg) center;
     background-size: cover;
+}
+
+.container{
     display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome__auth{
+    position: absolute;
+    top: 24px;
+    right: 100px;
+}
+
+.welcome__main{
+   background-color: rgba(#fcfcfc, .85);
+   border-radius: 4px;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   opacity: .85;
+}
+
+.welcome__photo{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 40px 0 20px;
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.welcome__name{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.welcome__socials{
+    margin: 35px 0;
 }

@@ -6,8 +6,40 @@ block title
 
 block content
     section.welcome
-        .contaner
-            a(href="#").btn.btn_auth Авторизоваться
+        .container
+            .welcome__auth
+                a(href="#").btn.btn_auth Авторизоваться
+
+            .welcome__main
+                .welcome__photo
+                    img(src="/assets/images/myphoto.jpg")
+                .welcome__name Дмитрий Пешкин
+                .welcome__caption Личный сайт веб разработчика
+                .welcome__socials
+                    ul.social
+                        li.social__icon
+                            a.social__link(href="https://vk.com/id5299005" target="_blank")
+                                svg.icon.icon_welcome
+                                    use(xlink:href="/assets/images/icons/sprite.svg#vk")
+                        li.social__icon
+                            a.social__link(href="https://github.com/ekb196" target="_blank")
+                                svg.icon.icon_welcome
+                                    use(xlink:href="/assets/images/icons/sprite.svg#github")
+                        li.social__icon
+                            a.social__link(href="" target="_blank")
+                                svg.icon.icon_welcome
+                                    use(xlink:href="/assets/images/icons/sprite.svg#in")
+                .welcome__buttons
+                    ul.nav
+                        li.nav__item
+                            a.btn.btn_welcome-nav(href="my-works.html") Мои работы
+                        li.nav__item
+                            a.btn.btn_welcome-nav(href="about.html") Обо мне
+                        li.nav__item
+                            a.btn.btn_welcome-nav(href="blog.html") Блог
+
+        footer.footer.footer__welcome 
+            .footer__copyright © Дмитрий Пешкин | создано в LoftSchool | 2017
 
 
 

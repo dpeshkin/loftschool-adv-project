@@ -1,8 +1,30 @@
 .btn{
     display: inline-block;
     padding: 15px 30px;
-    color: $invertTextColor;
     text-decoration: none;
-    border: solid 1px $invertTextColor;
+    font-weight: 500;
+}
+
+.btn_auth{
+    color: $invertColor;
+    border: solid 1px $invertColor;
     border-radius: 5px;
+    align-self: flex-start;
+
+    &:hover{
+        background-color: $invertColor;
+        color: $accentColor;
+    }
+   
+}
+
+.btn_welcome-nav{
+    background-color: $accentColor;
+    color: $invertColor;
+    border-right: solid 2px #6fd1c6;
+
+    &:hover{
+        background-color: $accentDarkenColor;
+    }
+
 }
