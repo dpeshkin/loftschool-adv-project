@@ -33,6 +33,10 @@ const paths = {
         src: 'src/images/**/*.{jpg,svg,png}',
         dest: 'dist/assets/images/'
     },
+    fonts: {
+        src: 'src/fonts/**/*.*',
+        dest: 'dist/fonts/'
+    },
     icons: {
         src: 'src/svg-icons/*.svg',
         dest: 'src/images/'
@@ -85,12 +89,19 @@ function images() {
           .pipe(gulp.dest(paths.images.dest));
 }
 
+// dist fonts
+function fonts() {
+    return gulp.src(paths.fonts.src)
+          .pipe(gulp.dest(paths.fonts.dest));
+}
+
 // watch
 function watch() {
     gulp.watch(paths.scripts.src, scripts);
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.templates.src, html);
     gulp.watch(paths.images.src, images);
+    gulp.watch(paths.fonts.src, fonts);
 }
 
 // browserSync
@@ -133,12 +144,13 @@ exports.styles = styles;
 exports.clean = clean;
 exports.scripts = scripts;
 exports.images = images;
+exports.fonts = fonts;
 exports.watch = watch;
 exports.server = server;
 exports.sprite = sprite; // этот модуль не будем вносить в gulp.task тк его нужно запустить всего 1 раз чтобы сделать svg-спрайт, для запуска набрать в консоли gulp sprite
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, scripts, html, images),
+    gulp.parallel(styles, scripts, html, images, fonts),
     gulp.parallel(watch, server)
 ));
