@@ -8,7 +8,11 @@ const   gulp = require('gulp'),
         sourcemaps = require('gulp-sourcemaps'),
         gulpWebpack = require('gulp-webpack'),
         webpack = require('webpack'),
-        webpackConfig = require('./webpack.config.js')
+        webpackConfig = require('./webpack.config.js'),
+        svgSprite = require('gulp-svg-sprites'),
+        svgmin = require('gulp-svgmin'),
+        cheerio = require('gulp-cheerio'),
+        replace = require('gulp-replace');
 
 //paths
 const paths = {
@@ -22,12 +26,16 @@ const paths = {
         dest: 'dist/assets/scripts/'
     },
     templates: {
-        src: 'src/templates/pages/*.pug',
+        src: 'src/templates/',
         dest: 'dist/assets/'
     },
     images: {
-        src: 'src/images/**/*.*',
+        src: 'src/images/**/*.{jpg,svg,png}',
         dest: 'dist/assets/images/'
+    },
+    icons: {
+        src: 'src/svg-icons/*.svg',
+        dest: 'src/images/'
     }
 };
 
@@ -46,7 +54,7 @@ function server() {
 
 //pug compile
 function html() {
-    return gulp.src(paths.templates.src)
+    return gulp.src(paths.templates.src+"pages/*.pug")
         .pipe(pug({ pretty: true }))
         .pipe(gulp.dest(paths.root));
 }
@@ -61,7 +69,6 @@ function styles() {
             cascade: false
         }))
         .pipe(sourcemaps.write())        
-        // .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.styles.dest))       
 }
 
@@ -94,6 +101,32 @@ function server() {
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
 
+// SVG-sprite, делает спрайт и сохраняет его в папку src/images, откуда он будет экспортирован таском gulp.images
+function sprite() {
+	return gulp.src(paths.icons.src)
+		.pipe(svgmin({
+			js2svg: {
+				pretty: true
+			}
+		}))
+		.pipe(cheerio({
+			run: function ($) {
+                $('[fill]').removeAttr('fill');
+                $('[stroke]').removeAttr('stroke');
+				$('[style]').removeAttr('style');
+			},
+			parserOptions: { xmlMode: true }
+		}))
+		.pipe(replace('&gt;', '>'))
+		.pipe(svgSprite({
+            mode: "symbols",
+            svg: {
+                symbols: 'icons/sprite.svg'
+            }
+        }))
+		.pipe(gulp.dest(paths.icons.dest));
+}
+
 
 exports.html = html;
 exports.styles = styles;
@@ -102,6 +135,7 @@ exports.scripts = scripts;
 exports.images = images;
 exports.watch = watch;
 exports.server = server;
+exports.sprite = sprite; // этот модуль не будем вносить в gulp.task тк его нужно запустить всего 1 раз чтобы сделать svg-спрайт, для запуска набрать в консоли gulp sprite
 
 gulp.task('default', gulp.series(
     clean,
