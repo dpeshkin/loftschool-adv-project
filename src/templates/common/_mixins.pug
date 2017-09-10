@@ -1,29 +1,13 @@
-mixin socials{className, modifier, id, href}
-    ul(class=className)
-        li(class=className+'__icon')
-            a(href=href target="_blank" class=className+'__link')
-                svg(class=icon+" "+icon_+modifier)
-                    use(xlink:href=assets/images/icons/sprite.svg#+id)
+mixin socialList(modifier, items)
+    ul.social__list
+        each item in items
+            li.social__item
+                a(href=item.href target="_blank" class='social__link')
+                    svg(class='icon icon_' + modifier)
+                        use(xlink:href='assets/images/icons/sprite.svg#' + item.id)
 
-                    
-                        
-                        
-                        
-                        
-                        
-                        li.social__icon
-                            a.social__link(href="https://github.com/ekb196" target="_blank")
-                                svg.icon.icon_welcome
-                                    use(xlink:href="assets/images/icons/sprite.svg#github")
-                        li.social__icon
-                            a.social__link(href="" target="_blank")
-                                svg.icon.icon_welcome
-                                    use(xlink:href="assetsimages/icons/sprite.svg#in")
-
-
-mixin list(id, ...items)
-  ul(id=id)
-    each item in items
-      li= item
-
-+list('my-list', 1, 2, 3, 4)
+mixin navList(linkClass, items)
+    ul.nav__list
+        each item in items
+            li.nav__item
+                a(href=item.href class=linkClass)= item.name

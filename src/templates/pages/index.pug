@@ -16,28 +16,10 @@ block content
                 .welcome__name Дмитрий Пешкин
                 .welcome__caption Личный сайт веб разработчика
                 .welcome__socials
-                    ul.social
-                        li.social__icon
-                            a.social__link(href="https://vk.com/id5299005" target="_blank")
-                                svg.icon.icon_welcome
-                                    use(xlink:href="/assets/images/icons/sprite.svg#vk")
-                        li.social__icon
-                            a.social__link(href="https://github.com/ekb196" target="_blank")
-                                svg.icon.icon_welcome
-                                    use(xlink:href="/assets/images/icons/sprite.svg#github")
-                        li.social__icon
-                            a.social__link(href="" target="_blank")
-                                svg.icon.icon_welcome
-                                    use(xlink:href="/assets/images/icons/sprite.svg#in")
+                    +socialList('welcome', socials)
                 .welcome__buttons
-                    ul.nav__list
-                        li.nav__item
-                            a.btn.btn_welcome-nav(href="my-works.html") Мои работы
-                        li.nav__item
-                            a.btn.btn_welcome-nav(href="about.html") Обо мне
-                        li.nav__item
-                            a.btn.btn_welcome-nav(href="blog.html") Блог
-
+                    +navList('btn btn_welcome-nav', navItems)
+     
         footer.footer.footer__welcome 
             .footer__copyright © Дмитрий Пешкин | создано в LoftSchool | 2017
 
