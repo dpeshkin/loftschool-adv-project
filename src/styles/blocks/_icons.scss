@@ -1,5 +1,7 @@
 .icon {
     display: block;
+    width: 30px;
+    height: 30px;
 }
 
 .icon_welcome {
@@ -12,4 +14,15 @@
     &:hover {
         opacity: 1;
     }
+}
+
+.icon_menu {
+    width: 40px;
+    height: 36px;
+    fill: $white-color;
+}
+
+.icon_bg {
+    width: auto;
+    height: 200px;
 }

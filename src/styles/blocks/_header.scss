@@ -1,0 +1,26 @@
+.header {
+    height: 400px;
+    background: url('../images/header-bg.jpg') center top;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__socials {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    svg {
+        fill: $white-color;
+    }
+}
+
+.header__menu-button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}

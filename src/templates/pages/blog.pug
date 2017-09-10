@@ -1,1 +1,22 @@
 extends ../_template.pug
+
+block title
+    title Blog
+    - desc = "Блог о веб-разработке"
+
+block content
+    .header
+        .header__socials
+            +socialList('welcome', socials)
+        .header__menu-button
+            a.menu(href="#")
+                +icon('menu', 'hamburger')
+        .person
+            .person__photo
+                img(src="assets/images/myphoto.jpg")
+        .head
+            .head__header Блог
+                .head__bg
+                    +icon('bg', 'blog_header')
+            .head__caption Статьи, которые я написал
+

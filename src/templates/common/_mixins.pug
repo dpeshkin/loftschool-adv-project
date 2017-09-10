@@ -11,3 +11,7 @@ mixin navList(linkClass, items)
         each item in items
             li.nav__item
                 a(href=item.href class=linkClass)= item.name
+
+mixin icon(modifier, id)
+    svg(class='icon icon_' + modifier)
+                        use(xlink:href='assets/images/icons/sprite.svg#' + id)
