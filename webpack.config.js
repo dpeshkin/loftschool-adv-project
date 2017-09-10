@@ -13,7 +13,6 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.js$/,
         enforce: "pre",
         loader: "eslint-loader",
         options: {
