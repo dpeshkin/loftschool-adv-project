@@ -109,7 +109,7 @@ function server() {
     browserSync.init({
         server: paths.root   
     });
-    browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
+    browserSync.watch(paths.root + '/**/*.{html,css}', browserSync.reload);
 }
 
 // SVG-sprite, делает спрайт и сохраняет его в папку src/images, откуда он будет экспортирован таском gulp.images
