@@ -154,27 +154,6 @@ function sprite() {
         .pipe(gulp.dest(paths.icons.dest));
 }
 
-// Функция для линтинга, она закоментирована, тк пайпнута к sass таску
-// function lint() {
-//     return gulp.src(paths.styles.src)
-//         .pipe(sassLint({
-//             rules: {
-//                 "class-name-format": 0,
-//                 "property-sort-order": 0,
-//                 "no-color-literals": 0,
-//                 "indentation": [
-//                     1,
-//                     {
-//                         'size': 4
-//                     }
-//                 ]
-//             }
-//         }))
-//         .pipe(sassLint.format())
-//         .pipe(sassLint.failOnError())
-// }
-
-
 exports.html = html;
 exports.styles = styles;
 exports.clean = clean;
@@ -183,7 +162,6 @@ exports.images = images;
 exports.fonts = fonts;
 exports.watch = watch;
 exports.server = server;
-// exports.lint = lint;
 exports.sprite = sprite; // этот модуль не будем вносить в gulp.task тк его нужно запустить всего 1 раз чтобы сделать svg-спрайт, для запуска набрать в консоли gulp sprite
 
 gulp.task('default', gulp.series(
