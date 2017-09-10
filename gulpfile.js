@@ -1,18 +1,19 @@
-const   gulp = require('gulp'),
-        del = require('del'),
-        browserSync = require('browser-sync').create(),
-        pug = require('gulp-pug'),
-        sass = require('gulp-sass'),
-        autoprefixer = require('gulp-autoprefixer'),
-        rename = require('gulp-rename'),
-        sourcemaps = require('gulp-sourcemaps'),
-        gulpWebpack = require('gulp-webpack'),
-        webpack = require('webpack'),
-        webpackConfig = require('./webpack.config.js'),
-        svgSprite = require('gulp-svg-sprites'),
-        svgmin = require('gulp-svgmin'),
-        cheerio = require('gulp-cheerio'),
-        replace = require('gulp-replace');
+const gulp = require('gulp'),
+    del = require('del'),
+    browserSync = require('browser-sync').create(),
+    pug = require('gulp-pug'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    rename = require('gulp-rename'),
+    sourcemaps = require('gulp-sourcemaps'),
+    gulpWebpack = require('gulp-webpack'),
+    webpack = require('webpack'),
+    webpackConfig = require('./webpack.config.js'),
+    svgSprite = require('gulp-svg-sprites'),
+    svgmin = require('gulp-svgmin'),
+    cheerio = require('gulp-cheerio'),
+    replace = require('gulp-replace'),
+    sassLint = require('gulp-sass-lint');
 
 //paths
 const paths = {
@@ -58,7 +59,7 @@ function server() {
 
 //pug compile
 function html() {
-    return gulp.src(paths.templates.src+"pages/*.pug")
+    return gulp.src(paths.templates.src + "pages/*.pug")
         .pipe(pug({ pretty: true }))
         .pipe(gulp.dest(paths.root));
 }
@@ -66,14 +67,29 @@ function html() {
 //sass compile
 function styles() {
     return gulp.src(paths.styles.src)
+        .pipe(sassLint({
+            rules: {
+                "class-name-format": 0,
+                "property-sort-order": 0,
+                "no-color-literals": 0,
+                "indentation": [
+                    1,
+                    {
+                        'size': 4
+                    }
+                ]
+            }
+        }))
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError())
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(sourcemaps.write())        
-        .pipe(gulp.dest(paths.styles.dest))       
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.styles.dest))
 }
 
 // webpack
@@ -86,13 +102,13 @@ function scripts() {
 // docs images
 function images() {
     return gulp.src(paths.images.src)
-          .pipe(gulp.dest(paths.images.dest));
+        .pipe(gulp.dest(paths.images.dest));
 }
 
 // docs fonts
 function fonts() {
     return gulp.src(paths.fonts.src)
-          .pipe(gulp.dest(paths.fonts.dest));
+        .pipe(gulp.dest(paths.fonts.dest));
 }
 
 // watch
@@ -107,36 +123,56 @@ function watch() {
 // browserSync
 function server() {
     browserSync.init({
-        server: paths.root   
+        server: paths.root
     });
     browserSync.watch(paths.root + '/**/*.{html,css}', browserSync.reload);
 }
 
 // SVG-sprite, делает спрайт и сохраняет его в папку src/images, откуда он будет экспортирован таском gulp.images
 function sprite() {
-	return gulp.src(paths.icons.src)
-		.pipe(svgmin({
-			js2svg: {
-				pretty: true
-			}
-		}))
-		.pipe(cheerio({
-			run: function ($) {
+    return gulp.src(paths.icons.src)
+        .pipe(svgmin({
+            js2svg: {
+                pretty: true
+            }
+        }))
+        .pipe(cheerio({
+            run: function ($) {
                 $('[fill]').removeAttr('fill');
                 $('[stroke]').removeAttr('stroke');
-				$('[style]').removeAttr('style');
-			},
-			parserOptions: { xmlMode: true }
-		}))
-		.pipe(replace('&gt;', '>'))
-		.pipe(svgSprite({
+                $('[style]').removeAttr('style');
+            },
+            parserOptions: { xmlMode: true }
+        }))
+        .pipe(replace('&gt;', '>'))
+        .pipe(svgSprite({
             mode: "symbols",
             svg: {
                 symbols: 'icons/sprite.svg'
             }
         }))
-		.pipe(gulp.dest(paths.icons.dest));
+        .pipe(gulp.dest(paths.icons.dest));
 }
+
+// Функция для линтинга, она закоментирована, тк пайпнута к sass таску
+// function lint() {
+//     return gulp.src(paths.styles.src)
+//         .pipe(sassLint({
+//             rules: {
+//                 "class-name-format": 0,
+//                 "property-sort-order": 0,
+//                 "no-color-literals": 0,
+//                 "indentation": [
+//                     1,
+//                     {
+//                         'size': 4
+//                     }
+//                 ]
+//             }
+//         }))
+//         .pipe(sassLint.format())
+//         .pipe(sassLint.failOnError())
+// }
 
 
 exports.html = html;
@@ -147,6 +183,7 @@ exports.images = images;
 exports.fonts = fonts;
 exports.watch = watch;
 exports.server = server;
+// exports.lint = lint;
 exports.sprite = sprite; // этот модуль не будем вносить в gulp.task тк его нужно запустить всего 1 раз чтобы сделать svg-спрайт, для запуска набрать в консоли gulp sprite
 
 gulp.task('default', gulp.series(

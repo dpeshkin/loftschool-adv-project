@@ -1,45 +1,44 @@
-
 // Подключение шрифтов @include font-face("Fontname", ("../fontlocation/fontname.fontex"), fonttype, fontweight);
 @mixin font-face($name, $font-files, $format, $weight: false, $style: normal) {
-  @font-face {
-    font-family: quote($name);
-    src: url($font-files) format(quote($format));
-    @if $weight {
-      font-weight: $weight;
+    @font-face {
+        font-family: quote($name);
+        src: url($font-files) format(quote($format));
+        @if $weight {
+            font-weight: $weight;
+        }
+        @if $style {
+            font-style: $style;
+        }
     }
-    @if $style {
-      font-style: $style;
-    }
-  }
 }
 
 @mixin circle($width, $color) {
-  width: $width;
-  height: $width;
-  border-radius: $width/2;
-  background-color: $color;
+    width: $width;
+    height: $width;
+    border-radius: $width / 2;
+    background-color: $color;
 }
 
 %clearfix {
-	&:after {
-		content: "";
-		display: block;
-		clear: both;
-	}
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
 }
 
 @function rem($px) {
-  @return $px / $htmltextsize + 0rem;
+    @return $px / $html-text-size + rem;
 }
 
 @mixin tablets {
-  @media screen and (max-width: $tablets) {
-    @content;
-  }
+    @media screen and (max-width: $tablets) {
+        @content;
+    }
 }
 
 @mixin phones {
-  @media screen and (max-width: $phones) {
-    @content;
-  }
+    @media screen and (max-width: $phones) {
+        @content;
+    }
 }

@@ -1,9 +1,13 @@
-.nav__list{
+.nav__list {
     display: flex;
 }
 
-.nav__item{
-    &:last-child a{
-        border-right: none;
+.nav__item {
+
+    &:last-child {
+
+        a {
+            border-right: 0;
+        }
     }
 }

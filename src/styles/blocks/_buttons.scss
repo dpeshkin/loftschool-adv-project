@@ -1,30 +1,28 @@
-.btn{
+.btn {
     display: inline-block;
     padding: 10px 30px;
     text-decoration: none;
     font-weight: 500;
 }
 
-.btn_auth{
-    color: $invertColor;
-    border: solid 1px $invertColor;
+.btn_auth {
+    color: $white-color;
+    border: solid 1px $white-color;
     border-radius: 5px;
     align-self: flex-start;
 
-    &:hover{
-        background-color: $invertColor;
-        color: $accentColor;
+    &:hover {
+        background-color: $white-color;
+        color: $accent-color;
     }
-   
 }
 
-.btn_welcome-nav{
-    background-color: $accentColor;
-    color: $invertColor;
+.btn_welcome-nav {
+    background-color: $accent-color;
+    color: $white-color;
     border-right: solid 2px #6fd1c6;
 
-    &:hover{
-        background-color: $accentDarkenColor;
+    &:hover {
+        background-color: $accent-darken-color;
     }
-
 }

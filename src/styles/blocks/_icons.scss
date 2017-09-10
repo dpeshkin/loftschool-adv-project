@@ -1,14 +1,15 @@
-.icon{
+.icon {
     display: block;
 }
 
-.icon_welcome{
+.icon_welcome {
     width: 31px;
     height: 23px;
     margin: 0 14px;
-    fill: $accentColor;
+    fill: $accent-color;
     opacity: .5;
-    &:hover{
+
+    &:hover {
         opacity: 1;
     }
 }
