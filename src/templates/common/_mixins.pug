@@ -6,12 +6,12 @@ mixin socialList(modifier, items)
                     svg(class='icon icon_' + modifier)
                         use(xlink:href='assets/images/icons/sprite.svg#' + item.id)
 
-mixin navList(linkClass, items)
-    ul.nav__list
+mixin navList(linkClass, modifier, items)
+    ul(class='nav__list '+modifier)
         each item in items
             li.nav__item
                 a(href=item.href class=linkClass)= item.name
 
 mixin icon(modifier, id)
     svg(class='icon icon_' + modifier)
-                        use(xlink:href='assets/images/icons/sprite.svg#' + id)
+        use(xlink:href='assets/images/icons/sprite.svg#' + id)

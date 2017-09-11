@@ -1,0 +1,50 @@
+.blog {
+    display: flex;
+}
+
+.blog__left {
+    width: 400px;
+    margin-right: 120px;
+}
+
+.blog__nav {
+    margin-left: 125px;
+}
+
+.blog__link {
+    text-align: right;
+    text-decoration: none;
+    color: $main-text-color;
+    border-right: solid 3px transparent;
+    display: inline-block;
+    padding: 10px 18px 10px 0;
+
+    &:hover {
+        color: $accent-color;
+        font-weight: 500;
+        border-color: $accent-color;
+    }
+}
+
+.blog__right {
+    width: 1290px;
+}
+
+.blog__content {
+    margin-right: 310px;
+}
+
+.blog__article-header {
+    font-family: $header-font;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.blog__article-date {
+    color: $accent-color;
+    margin-bottom: 30px;
+}
+
+.blog__article-content {
+
+}

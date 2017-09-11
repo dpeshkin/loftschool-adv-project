@@ -1,12 +1,35 @@
 .header {
-    height: 400px;
     background: url('../images/header-bg.jpg') center top;
     background-size: cover;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    margin-bottom: 70px;
+    padding-top: 40px;
+
+    &::before,
+    &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        height: 0;
+        border-top: solid 70px transparent;
+        border-bottom: solid 70px $white-color;
+    }
+
+    &::before {
+        left: 0;
+        border-right: solid 25vw transparent;
+        border-left: solid 25vw $white-color;
+    }
+
+    &::after {
+        right: 0;
+        border-right: solid 25vw $white-color;
+        border-left: solid 25vw transparent;
+    }
 }
 
 .header__socials {

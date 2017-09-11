@@ -2,6 +2,15 @@
     display: flex;
 }
 
+.nav__list_blog {
+    flex-direction: column;
+    align-items: flex-end;
+
+    li {
+        text-align: right;
+    }
+}
+
 .nav__item {
 
     &:last-child {

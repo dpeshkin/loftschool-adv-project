@@ -5,6 +5,7 @@
     justify-content: center;
     color: $white-color;
     z-index: 1;
+    position: relative;
 }
 
 .head__header {
@@ -14,7 +15,6 @@
     margin-bottom: 16px;
     display: flex;
     align-items: center;
-    position: relative;
 
     &::before,
     &::after {
@@ -31,8 +31,13 @@
 
 .head__bg {
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
     z-index: -1;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    opacity: .07;
+}
+
+.head__caption {
+    margin-bottom: 55px;
 }
