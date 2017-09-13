@@ -72,6 +72,7 @@ function styles() {
                 "class-name-format": 0,
                 "property-sort-order": 0,
                 "no-color-literals": 0,
+                "force-element-nesting": 0,
                 "indentation": [
                     1,
                     {

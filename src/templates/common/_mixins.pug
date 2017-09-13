@@ -1,17 +1,25 @@
-mixin socialList(modifier, items)
+mixin socialList(iconModifier, items, svgIdModifier)
+    if !svgIdModifier
+        - var svgIdModifier = ''
     ul.social__list
         each item in items
             li.social__item
                 a(href=item.href target="_blank" class='social__link')
-                    svg(class='icon icon_' + modifier)
-                        use(xlink:href='assets/images/icons/sprite.svg#' + item.id)
+                    svg(class='icon icon_' + iconModifier)
+                        use(xlink:href='assets/images/icons/sprite.svg#' + item.id + svgIdModifier)
 
-mixin navList(linkClass, modifier, items)
-    ul(class='nav__list '+modifier)
-        each item in items
+mixin navList(navListModifier, navLinkModifier, items, itemsReduceFactor)
+    if !itemsReduceFactor
+        - var itemsReduceFactor = 0
+    ul(class='nav__list '+navListModifier)
+        - for (i=0; i<items.length-itemsReduceFactor; i++)
             li.nav__item
-                a(href=item.href class=linkClass)= item.name
+                a(href= items[i].href class='nav__link ' + navLinkModifier)= items[i].name
 
-mixin icon(modifier, id)
-    svg(class='icon icon_' + modifier)
-        use(xlink:href='assets/images/icons/sprite.svg#' + id)
+mixin icon(iconModifier, svgId)
+    svg(class='icon icon_' + iconModifier)
+        use(xlink:href='assets/images/icons/sprite.svg#' + svgId)
+
+mixin blog-article(articleHeader, articleDate)
+    .blog__article-header= articleHeader
+    .blog__article-date= articleDate

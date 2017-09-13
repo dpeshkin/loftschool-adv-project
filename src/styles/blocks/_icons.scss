@@ -16,6 +16,24 @@
     }
 }
 
+.icon_footer {
+    width: 36px;
+    height: 36px;
+    margin: 0 5px;
+    border: solid 1px $white-color;
+    border-radius: 50%;
+    opacity: .5;
+    background-color: $white-color;
+    fill: $dark-grey-color;
+
+    &:hover {
+        opacity: 1;
+        fill: $white-color;
+        background-color: $dark-grey-color;
+        border-color: transparent;
+    }
+}
+
 .icon_menu {
     width: 40px;
     height: 36px;

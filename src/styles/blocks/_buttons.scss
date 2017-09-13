@@ -16,13 +16,3 @@
         color: $accent-color;
     }
 }
-
-.btn_welcome-nav {
-    background-color: $accent-color;
-    color: $white-color;
-    border-right: solid 2px #6fd1c6;
-
-    &:hover {
-        background-color: $accent-darken-color;
-    }
-}
