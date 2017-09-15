@@ -5,25 +5,32 @@ block title
     - desc = "Блог о веб-разработке"
 
 block content
-    .header
+    section.section.header.header_blog
         .header__socials
             +socialList('welcome', socials, '')
         .header__menu-button
             a.menu(href="#")
                 +icon('menu', 'hamburger')
-        .person
-            .person__photo
-                img(src="assets/images/myphoto.jpg")
-        .head
-            .head__header Блог
-                .head__bg
-                    +icon('bg', 'blog_header')
-            .head__caption Статьи, которые я написал
-        svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="header__chevron")
-            polygon(points="0,85 0,0 501,85" fill="#ffffff")
-            polygon(points="1000,85 1000,0 499,85" fill="#ffffff")
+        .header__person
+            .person
+                .person__photo
+                    img.responsive-img(src="assets/images/myphoto.jpg")
+        .header__title
+            .section-title.section-title_color_white
+                .section-title__header Блог
+                    .section-title__bg.section-title__bg_blog
+                        +icon('header-title-bg', 'blog_header')
+                .section-title__caption Статьи, которые я написал
 
-    .blog
+    section.blog
+        .blog__triangle.blog__triangle_left
+            .triangle.triangle_color_white
+                svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+                    polygon(points="0,100 0,0 501,85 501,100")
+        .blog__triangle.blog__triangle_right
+            .triangle.triangle_color_white
+                svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+                    polygon(points="0,85 0,100 501,100 501,0")
         .blog__left
             .blog__nav
                 +navList('nav__list_blog', 'nav__link_blog', blogNavItems)

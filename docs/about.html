@@ -4,12 +4,155 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <title></title>
-    <meta name="description">
+    <title>About me</title>
+    <meta name="description" content="Мои навыки">
     <link rel="stylesheet" href="assets/styles/css.css">
   </head>
   <body>
     <div class="wrapper">
+      <section class="section header">
+        <div class="header__bg">
+          <div class="header__bg-icon">
+            <svg class="icon icon_header-title-bg">
+              <use xlink:href="assets/images/icons/sprite.svg#portfolio_header"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="header__content">
+          <div class="header__socials socials">
+            <ul class="social__list">
+              <li class="social__item"><a class="social__link" href="https://vk.com/id5299005" target="_blank">
+                  <svg class="icon icon_welcome">
+                    <use xlink:href="assets/images/icons/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="https://github.com/ekb196" target="_blank">
+                  <svg class="icon icon_welcome">
+                    <use xlink:href="assets/images/icons/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="#" target="_blank">
+                  <svg class="icon icon_welcome">
+                    <use xlink:href="assets/images/icons/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="header__menu-button"><a class="menu" href="#">
+              <svg class="icon icon_menu">
+                <use xlink:href="assets/images/icons/sprite.svg#hamburger"></use>
+              </svg></a></div>
+          <div class="header__person">
+            <div class="person person_head">
+              <div class="person__photo"><img class="responsive-img" src="assets/images/myphoto.jpg"></div>
+              <div class="person__name">Дмитрий Пешкин</div>
+              <div class="person__caption">Личный сайт веб разработчика</div>
+            </div>
+          </div>
+          <div class="header__arrow">
+            <svg class="icon icon_arrow">
+              <use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section class="section about">
+        <div class="about__left">
+          <div class="about__triangle about__triangle_left">
+            <div class="triangle triangle_color_beige">
+              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none">
+                <polygon points="0,100 0,0 501,85 501,100"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div class="about__left-header">
+            <div class="section-title">
+              <div class="section-title__header">Обо мне
+                <div class="section-title__bg">
+                  <svg class="icon icon_section-title-bg">
+                    <use xlink:href="assets/images/icons/sprite.svg#about_header"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about__left-content">
+            <div class="user">
+              <div class="user__photo"><img class="responsive-img" src="assets/images/myphoto.jpg"></div>
+              <div class="user__title">
+                <div class="section-title__subheader">Кто я</div>
+              </div>
+              <div class="user__description">
+                <p>Я начинающий веб разработчик из Екатериньбурга. Мне 28 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. </p>
+                <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about__right">
+          <div class="about__triangle about__triangle_right">
+            <div class="triangle triangle_color_dark-beige">
+              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none">
+                <polygon points="0,85 0,100 501,100 501,0"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div class="about__right-content">
+            <div class="skils">
+              <div class="skills__subheader">
+                <div class="section-title__subheader">Чем я могу быть вам полезен</div>
+              </div>
+              <div class="skills__description">
+                <p>Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.</p>
+              </div>
+              <div class="skills__row">
+                <div class="skills__group group">
+                  <div class="group_header">Frontend</div>
+                </div>
+              </div>
+              <div class="skills__row">
+                <div class="skills__group group">
+                  <div class="group_header">Backend</div>
+                </div>
+              </div>
+              <div class="skills__row">
+                <div class="skills__group group">
+                  <div class="group_header">WorkFlow</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer footer_darken">
+        <div class="footer__row">
+          <div class="footer__nav">
+            <ul class="nav__list nav__list_footer">
+              <li class="nav__item"><a class="nav__link nav__link_footer" href="my-works.html">Мои работы</a></li>
+              <li class="nav__item"><a class="nav__link nav__link_footer" href="about.html">Обо мне</a></li>
+              <li class="nav__item"><a class="nav__link nav__link_footer" href="blog.html">Блог</a></li>
+              <li class="nav__item"><a class="nav__link nav__link_footer" href="auth.html">Авторизация</a></li>
+            </ul>
+          </div>
+          <div class="footer__socials socials">
+            <ul class="social__list">
+              <li class="social__item"><a class="social__link" href="https://vk.com/id5299005" target="_blank">
+                  <svg class="icon icon_footer">
+                    <use xlink:href="assets/images/icons/sprite.svg#vk_round"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="https://github.com/ekb196" target="_blank">
+                  <svg class="icon icon_footer">
+                    <use xlink:href="assets/images/icons/sprite.svg#github_round"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="#" target="_blank">
+                  <svg class="icon icon_footer">
+                    <use xlink:href="assets/images/icons/sprite.svg#in_round"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__row">
+          <div class="footer__descr">Я веб-разработчик из Екатеринбурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </div>
+          <div class="footer__copyright">© Дмитрий Пешкин | создано в LoftSchool | 2017</div>
+        </div>
+      </footer>
     </div>
     <script src="assets/scripts/bundle.js" defer></script>
   </body>

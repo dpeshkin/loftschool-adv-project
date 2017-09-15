@@ -1,1 +1,84 @@
 extends ../_template.pug
+
+block title
+    title About me
+    - desc = "Мои навыки"
+
+block content
+
+    section.section.header
+        .header__bg
+            .header__bg-icon
+                +icon('header-title-bg','portfolio_header')
+
+        .header__content
+            .header__socials.socials
+                +socialList('welcome', socials, '')
+
+            .header__menu-button
+                a.menu(href="#")
+                    +icon('menu', 'hamburger')
+
+            .header__person
+                .person.person_head
+                    .person__photo
+                        img.responsive-img(src="assets/images/myphoto.jpg")
+                    .person__name Дмитрий Пешкин
+                    .person__caption Личный сайт веб разработчика
+
+            .header__arrow
+                +icon('arrow', 'arrow_down')
+    
+    section.section.about
+        .about__left
+            .about__triangle.about__triangle_left
+                .triangle.triangle_color_beige
+                    svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+                        polygon(points="0,100 0,0 501,85 501,100")
+            .about__left-header
+                .section-title
+                    .section-title__header Обо мне
+                        .section-title__bg
+                            +icon('section-title-bg', 'about_header')
+            .about__left-content
+                .user
+                    .user__photo
+                        img.responsive-img(src="assets/images/myphoto.jpg")
+                    .user__title
+                        .section-title__subheader Кто я
+                    .user__description
+                        p Я начинающий веб разработчик из Екатериньбурга. Мне 28 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. 
+                        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+        .about__right
+            .about__triangle.about__triangle_right
+                .triangle.triangle_color_dark-beige
+                    svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+                        polygon(points="0,85 0,100 501,100 501,0")
+            .about__right-content
+                .skils
+                    .skills__subheader
+                        .section-title__subheader Чем я могу быть вам полезен
+                    .skills__description
+                        p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                    .skills__row
+                        .skills__group.group
+                            .group_header Frontend
+                    .skills__row
+                        .skills__group.group
+                            .group_header Backend
+                    .skills__row
+                        .skills__group.group
+                            .group_header WorkFlow
+
+
+    footer.footer.footer_darken
+        .footer__row
+            .footer__nav
+                +navList('nav__list_footer', 'nav__link_footer', navItems)
+            .footer__socials.socials
+                +socialList('footer', socials, '_round')
+        .footer__row
+            .footer__descr Я веб-разработчик из Екатеринбурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+            .footer__copyright © Дмитрий Пешкин | создано в LoftSchool | 2017
+                

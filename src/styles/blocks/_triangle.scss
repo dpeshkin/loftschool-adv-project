@@ -1,0 +1,29 @@
+.triangle {
+    width: 100%;
+    display: flex;
+
+    svg {
+        width: 100%;
+    }
+}
+
+.triangle_color_white {
+
+    svg {
+        fill: $white-color;
+    }
+}
+
+.triangle_color_beige {
+
+    svg {
+        fill: $beige-color;
+    }
+}
+
+.triangle_color_dark-beige {
+
+    svg {
+        fill: $dark-beige-color;
+    }
+}

@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="header">
+      <section class="section header header_blog">
         <div class="header__socials">
           <ul class="social__list">
             <li class="social__item"><a class="social__link" href="https://vk.com/id5299005" target="_blank">
@@ -31,25 +31,39 @@
             <svg class="icon icon_menu">
               <use xlink:href="assets/images/icons/sprite.svg#hamburger"></use>
             </svg></a></div>
-        <div class="person">
-          <div class="person__photo"><img src="assets/images/myphoto.jpg"></div>
-        </div>
-        <div class="head">
-          <div class="head__header">Блог
-            <div class="head__bg">
-              <svg class="icon icon_bg">
-                <use xlink:href="assets/images/icons/sprite.svg#blog_header"></use>
-              </svg>
-            </div>
+        <div class="header__person">
+          <div class="person">
+            <div class="person__photo"><img class="responsive-img" src="assets/images/myphoto.jpg"></div>
           </div>
-          <div class="head__caption">Статьи, которые я написал</div>
         </div>
-        <svg class="header__chevron" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none">
-          <polygon points="0,85 0,0 501,85" fill="#ffffff"></polygon>
-          <polygon points="1000,85 1000,0 499,85" fill="#ffffff"></polygon>
-        </svg>
-      </div>
-      <div class="blog">
+        <div class="header__title">
+          <div class="section-title section-title_color_white">
+            <div class="section-title__header">Блог
+              <div class="section-title__bg section-title__bg_blog">
+                <svg class="icon icon_header-title-bg">
+                  <use xlink:href="assets/images/icons/sprite.svg#blog_header"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="section-title__caption">Статьи, которые я написал</div>
+          </div>
+        </div>
+      </section>
+      <section class="blog">
+        <div class="blog__triangle blog__triangle_left">
+          <div class="triangle triangle_color_white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none">
+              <polygon points="0,100 0,0 501,85 501,100"></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="blog__triangle blog__triangle_right">
+          <div class="triangle triangle_color_white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none">
+              <polygon points="0,85 0,100 501,100 501,0"></polygon>
+            </svg>
+          </div>
+        </div>
         <div class="blog__left">
           <div class="blog__nav">
             <ul class="nav__list nav__list_blog">
@@ -112,7 +126,7 @@ Dolores neque, pariatur, atque similique doloremque iusto aperiam voluptate quid
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <footer class="footer footer_darken">
         <div class="footer__row">
           <div class="footer__nav">

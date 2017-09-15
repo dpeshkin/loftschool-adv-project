@@ -1,0 +1,38 @@
+.about {
+    display: flex;
+}
+
+.about__left,
+.about__right {
+    width: 50%;
+    display: flex;
+    padding: 0 20px;
+    position: relative;
+}
+
+.about__left {
+    background-color: $beige-color;
+}
+
+.about__left-header,
+.about__left-content {
+    width: 50%;
+}
+
+.about__triangle {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+}
+
+.about__triangle_left {
+    left: 0;
+}
+
+.about__triangle_right {
+    right: 0;
+}
+
+.about__right {
+    background-color: $dark-beige-color;
+}

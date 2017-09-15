@@ -1,6 +1,6 @@
 .icon {
     display: block;
-    width: 30px;
+    width: 100%;
     height: 30px;
 }
 
@@ -24,12 +24,12 @@
     border-radius: 50%;
     opacity: .5;
     background-color: $white-color;
-    fill: $dark-grey-color;
+    fill: rgba($dark-grey-color, .85);
 
     &:hover {
         opacity: 1;
         fill: $white-color;
-        background-color: $dark-grey-color;
+        background-color: rgba($dark-grey-color, .85);
         border-color: transparent;
     }
 }
@@ -40,8 +40,18 @@
     fill: $white-color;
 }
 
-.icon_bg {
-    width: auto;
-    height: 200px;
+.icon_header-title-bg {
     fill: $white-color;
+    height: 100%;
+}
+
+.icon_section-title-bg {
+    height: 100%;
+    fill: $main-text-color;
+}
+
+.icon_arrow {
+    width: 26px;
+    fill: $white-color;
+    opacity: .7;
 }
