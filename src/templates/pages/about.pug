@@ -56,21 +56,14 @@ block content
                     svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
                         polygon(points="0,85 0,100 501,100 501,0")
             .about__right-content
-                .skils
-                    .skills__subheader
+                .skills
+                    .skills__header
                         .section-title__subheader Чем я могу быть вам полезен
-                    .skills__description
+                    .skills__text
                         p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                    .skills__row
-                        .skills__group.group
-                            .group_header Frontend
-                    .skills__row
-                        .skills__group.group
-                            .group_header Backend
-                    .skills__row
-                        .skills__group.group
-                            .group_header WorkFlow
-
+                    .skills__values
+                        +skills-list(skillsList)
+                        
 
     footer.footer.footer_darken
         .footer__row

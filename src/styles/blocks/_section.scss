@@ -51,9 +51,12 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 450px;
+    text-align: center;
 
     &::before,
     &::after {
+        flex-shrink: 0;
         content: '';
         display: inline-block;
         width: 22px;

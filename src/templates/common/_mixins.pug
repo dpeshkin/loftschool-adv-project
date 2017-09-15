@@ -16,6 +16,22 @@ mixin navList(navListModifier, navLinkModifier, items, itemsReduceFactor)
             li.nav__item
                 a(href= items[i].href class='nav__link ' + navLinkModifier)= items[i].name
 
+mixin skills-list(skillsList)
+    ul.skills__list
+        each item in skillsList
+            li.skills__item
+                .skills-row
+                    .skills-row__title= item.type
+                    - var values = item.values
+                        ul.skills-row__list
+                            - for (i=0; i<values.length; i++)
+                                li.skills-row__item
+                                    .skill
+                                        svg(class="circles", viewBox="0 0 110 110")
+                                            circle(r="45", cx="50%", cy="50%", fill="none", class="circle__first")
+                                            circle(r="45", cx="50%", cy="50%", transform="rotate(-90 55 55)", class="circle__second circle-"+values[i].skillValue)
+                                        .skill__title= values[i].skillName
+
 mixin icon(iconModifier, svgId)
     svg(class='icon icon_' + iconModifier)
         use(xlink:href='assets/images/icons/sprite.svg#' + svgId)
