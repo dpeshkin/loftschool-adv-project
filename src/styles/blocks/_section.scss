@@ -32,6 +32,7 @@ section {
     position: relative;
     z-index: 1;
     text-align: center;
+    max-width: 450px;
 
     &::before,
     &::after {
@@ -42,6 +43,7 @@ section {
         background-color: $main-text-color;
         margin: 0 20px;
         opacity: .2;
+        flex-shrink: 0;
     }
 }
 
@@ -88,4 +90,18 @@ section {
 
 .section-title__caption {
     margin-bottom: 55px;
+}
+
+.section__triangle {
+    position: absolute;
+    bottom: 100%;
+    width: 50%;
+}
+
+.section__triangle_left {
+    left: 0;
+}
+
+.section__triangle_right {
+    right: 0;
 }

@@ -4,12 +4,142 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <title></title>
-    <meta name="description">
+    <title>My Works</title>
+    <meta name="description" content="Мои работы">
     <link rel="stylesheet" href="assets/styles/css.css">
   </head>
   <body>
     <div class="wrapper">
+      <section class="section header">
+        <div class="header__bg">
+          <div class="header__bg-icon">
+            <svg class="icon icon_header-title-bg">
+              <use xlink:href="assets/images/icons/sprite.svg#portfolio_header"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="header__content">
+          <div class="header__socials socials">
+            <ul class="social__list">
+              <li class="social__item"><a class="social__link" href="https://vk.com/id5299005" target="_blank">
+                  <svg class="icon icon_welcome">
+                    <use xlink:href="assets/images/icons/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="https://github.com/ekb196" target="_blank">
+                  <svg class="icon icon_welcome">
+                    <use xlink:href="assets/images/icons/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="#" target="_blank">
+                  <svg class="icon icon_welcome">
+                    <use xlink:href="assets/images/icons/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="header__menu-button"><a class="menu" href="#">
+              <svg class="icon icon_menu">
+                <use xlink:href="assets/images/icons/sprite.svg#hamburger"></use>
+              </svg></a></div>
+          <div class="header__person">
+            <div class="person person_head">
+              <div class="person__photo"><img class="responsive-img" src="assets/images/myphoto.jpg"></div>
+              <div class="person__name">Дмитрий Пешкин</div>
+              <div class="person__caption">Личный сайт веб разработчика</div>
+            </div>
+          </div>
+          <div class="header__arrow">
+            <svg class="icon icon_arrow">
+              <use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section class="section my-works">
+        <div class="section__triangle section__triangle_left">
+          <div class="triangle triangle_color_white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none">
+              <polygon points="0,100 0,0 501,85 501,100"></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="section__triangle section__triangle_right">
+          <div class="triangle triangle_color_white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none">
+              <polygon points="0,85 0,100 501,100 501,0"></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="my-works__header">
+          <div class="section-title__header">Мои работы
+            <div class="section-title__bg">
+              <svg class="icon icon_section-title-bg">
+                <use xlink:href="assets/images/icons/sprite.svg#works_header"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="my-works__slider">
+          <div class="slider">
+            <div class="slider__description">
+              <div class="project">
+                <div class="project__title">
+                  <div class="section-title__subheader">Сайт школы онлайн оьразования</div>
+                </div>
+                <div class="project__technologies">HTML, CSS, JAVASCRIPT</div>
+                <div class="project__link"><a class="btn btn_show" href="#">
+                    <div class="btn__icon">
+                      <svg class="icon icon_link">
+                        <use xlink:href="assets/images/icons/sprite.svg#link"></use>
+                      </svg>
+                    </div><span>Посмотреть сайт</span></a></div>
+              </div>
+            </div>
+            <div class="slider__image"><img class="responsive-img" src="assets/images/my-works/work-1.png"></div>
+            <div class="slider__controls controls">
+              <div class="controls__left">
+                <div class="controls__caption">
+                  <div class="controls__icon">
+                    <svg class="icon icon_slider-control">
+                      <use xlink:href="assets/images/icons/sprite.svg#portf_arrow_down"></use>
+                    </svg>
+                    <div class="controls__icon-bg">
+                      <svg class="icon icon_slider-control-shadow">
+                        <use xlink:href="assets/images/icons/sprite.svg#portf_arrow_down"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="controls__bg"><img class="responsive-img" src="assets/images/my-works/work-2.jpg"></div>
+              </div>
+              <div class="controls__right">
+                <div class="controls__caption">
+                  <div class="controls__icon">
+                    <svg class="icon icon_slider-control">
+                      <use xlink:href="assets/images/icons/sprite.svg#portf_arrow_up"></use>
+                    </svg>
+                    <div class="controls__icon-bg">
+                      <svg class="icon icon_slider-control-shadow">
+                        <use xlink:href="assets/images/icons/sprite.svg#portf_arrow_up"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="controls__bg"><img class="responsive-img" src="assets/images/my-works/work-3.jpg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section mentions">
+        <div class="mentions__header">
+          <div class="section-title__header">Что обо мне говорят
+            <div class="section-title__bg">
+              <svg class="icon icon_section-title-bg">
+                <use xlink:href="assets/images/icons/sprite.svg#about_header"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <script src="assets/scripts/bundle.js" defer></script>
   </body>
