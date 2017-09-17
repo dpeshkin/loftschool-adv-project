@@ -83,16 +83,53 @@ block content
             .section-title__header Что обо мне говорят
                 .section-title__bg
                     +icon('section-title-bg', 'about_header')
+        .mentions__content
+            ul.mentions__list
+                li.mentions__item
+                    .mention
+                        .mention__icon
+                            .mention__icon-quote
+                                +icon('quote','quote')
+                        .mention__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .mention__owner
+                            .owner
+                                .owner__photo
+                                    img.responsive-img(src='assets/images/mentions/owner-1.jpg')
+                                .owner__desc 
+                                    .owner__name Ковальчук Дмитрий
+                                    .owner__position основатель Liftschool
+                li.mentions__item
+                    .mention
+                        .mention__icon
+                            .mention__icon-quote
+                                +icon('quote','quote')
+                        .mention__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                        .mention__owner
+                            .owner
+                                .owner__photo
+                                    img.responsive-img(src='assets/images/mentions/owner-2.jpg')
+                                .owner__desc 
+                                    .owner__name Сабанцев Владимир
+                                    .owner__position преподаватель      
+
+        //- .mentions__feedback
+        //-     .feedback
+        //-         .feedback__header
+        //-             .section__title__subheader Связаться со мной
+        //-             input(type='text' id='name')
+        //-             input(type='enail' id='email')
+        //-             textarea(id='message' rows='3') Ваше сообщение
+                
 
 
 
-    //- footer.footer.footer_darken
-    //-     .footer__row
-    //-         .footer__nav
-    //-             +navList('nav__list_footer', 'nav__link_footer', navItems)
-    //-         .footer__socials.socials
-    //-             +socialList('footer', socials, '_round')
-    //-     .footer__row
-    //-         .footer__descr Я веб-разработчик из Екатеринбурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
-    //-         .footer__copyright © Дмитрий Пешкин | создано в LoftSchool | 2017
+    footer.footer.footer_darken
+        .footer__row
+            .footer__nav
+                +navList('nav__list_footer', 'nav__link_footer', navItems)
+            .footer__socials.socials
+                +socialList('footer', socials, '_round')
+        .footer__row
+            .footer__descr Я веб-разработчик из Екатеринбурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+            .footer__copyright © Дмитрий Пешкин | создано в LoftSchool | 2017
     

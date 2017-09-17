@@ -1,9 +1,72 @@
 .mentions {
     padding-top: 35px;
+    background: url('../images/mentions/mentions-bg.jpg') center;
+    background-size: cover;
+    min-height: 1200px;
+}
+
+.mention__icon {
+    margin-bottom: 25px;
+}
+
+.mention__icon-quote {
+    width: 34px;
+    height: 30px;
+    opacity: .2;
 }
 
 .mentions__header {
     display: flex;
     justify-content: center;
     margin-bottom: 55px;
+    
+}
+.mentions__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 70px;
+}
+
+.mentions__item {
+    margin-right: 20px;
+
+    &:nth-child(even) {
+        margin-right: 0;
+    }
+}
+
+.mention {
+    max-width: 380px;
+}
+
+.mention__text {
+    margin-bottom: 25px;
+}
+
+.owner {
+    display: flex;
+}
+
+.owner__photo {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.owner__desc {
+    color: $accent-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.owner__name {
+    font-weight: 500;
+}
+
+.mentions__feedback {
+    background-color: rgba($white-color, .8);
 }
