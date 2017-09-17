@@ -26,11 +26,12 @@ section {
     font-family: $header-font;
     font-size: $header-text-size;
     line-height: $header-text-size;
-    margin-bottom: 16px;
+    margin: 0 16px auto;
     display: flex;
     align-items: center;
     position: relative;
     z-index: 1;
+    text-align: center;
 
     &::before,
     &::after {
@@ -53,6 +54,7 @@ section {
     justify-content: center;
     max-width: 450px;
     text-align: center;
+    margin: 0 auto;
 
     &::before,
     &::after {

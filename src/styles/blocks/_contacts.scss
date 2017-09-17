@@ -1,0 +1,35 @@
+.contacts {
+    padding: 35px;
+    background-color: rgba($white-color, .85);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts__title {
+    margin-bottom: 40px;
+}
+
+.contacts__item {
+    display: block;
+    margin-bottom: 25px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+}
+
+.contact__icon {
+    margin-right: 10px;
+    width: 26px;
+}
+
+.contact__text {
+    font-weight: 500;
+    opacity: .8;
+}

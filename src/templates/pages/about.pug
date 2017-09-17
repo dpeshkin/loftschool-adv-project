@@ -47,7 +47,7 @@ block content
                     .user__title
                         .section-title__subheader Кто я
                     .user__description
-                        p Я начинающий веб разработчик из Екатериньбурга. Мне 28 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. 
+                        p Я начинающий веб разработчик из Екатеринбурга. Мне 28 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. 
                         p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
         .about__right
@@ -63,7 +63,23 @@ block content
                         p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
                     .skills__values
                         +skills-list(skillsList)
-                        
+
+    section.section.map
+        .map__contacts
+            .contacts
+                .contacts__title
+                    .section-title__subheader Контакты
+                .contacts__content
+                    ul.contacts__list
+                        for item in contacts
+                            li.contacts__item
+                                .contact
+                                    .contact__icon
+                                        +icon('contacts', item.svgId)
+                                    .contact__text= item.contact
+
+
+
 
     footer.footer.footer_darken
         .footer__row
