@@ -1,0 +1,19 @@
+.fs-nav {
+    background-color: rgba($accent-color, .87);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 90px;
+    display: flex;
+    transform: translateY(-100%);
+    transition: transform 1s;
+}
+
+fs-nav_active {
+    transform: translateY(0%);
+}

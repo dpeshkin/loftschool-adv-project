@@ -30,7 +30,6 @@ section {
     display: flex;
     align-items: center;
     position: relative;
-    z-index: 1;
     text-align: center;
     max-width: 450px;
 
@@ -43,6 +42,7 @@ section {
         background-color: $main-text-color;
         opacity: .2;
         flex-shrink: 0;
+        margin: 0 18px;
     }
 }
 
