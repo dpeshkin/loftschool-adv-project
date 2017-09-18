@@ -49,7 +49,7 @@ block content
                 .slider__description
                     .project
                         .project__title
-                            .section-title__subheader Сайт школы онлайн оьразования
+                            .section-title__subheader Сайт школы онлайн образования
                         .project__technologies HTML, CSS, JAVASCRIPT
                         .project__link
                             a.btn.btn_show(href='#')
@@ -112,13 +112,19 @@ block content
                                     .owner__name Сабанцев Владимир
                                     .owner__position преподаватель      
 
-        //- .mentions__feedback
-        //-     .feedback
-        //-         .feedback__header
-        //-             .section__title__subheader Связаться со мной
-        //-             input(type='text' id='name')
-        //-             input(type='enail' id='email')
-        //-             textarea(id='message' rows='3') Ваше сообщение
+        .mentions__feedback
+            .feedback
+                .feedback__wrapper
+                    .feedback__header
+                        .section-title__subheader.section-title__subheader_form Связаться со мной
+                    .feedback__form
+                        form(id='feedback-form', class='form')
+                            input(type='text', id='name', placeholder='Имя', class='form__input')
+                            input(type='enail', id='email', placeholder='Email', class='form__input')
+                            textarea(id='message', rows='3', class='form__input', placeholder='Ваше сообщение')
+                .feedback__buttons
+                    button(form='feedback-form', type='submit', class='btn btn_form') Отправить
+                    button(form='feedback-form', type='reset', class='btn btn_form') Очистить
                 
 
 

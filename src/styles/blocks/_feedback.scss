@@ -1,0 +1,32 @@
+.feedback {
+    max-width: 380px;
+    background-color: rgba($white-color, .8);
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.feedback__wrapper {
+    padding: 35px 20px 0;
+}
+
+.feedback__header {
+    margin-bottom: 35px;
+}
+
+.form__input {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border: 0;
+    font-family: $main-font;
+
+    &::placeholder {
+        color: rgba($main-text-color, .5);
+    }
+}
+
+.feedback__buttons {
+    display: flex;
+}

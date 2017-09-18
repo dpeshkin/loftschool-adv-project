@@ -41,7 +41,6 @@ section {
         width: 22px;
         height: 5px;
         background-color: $main-text-color;
-        margin: 0 20px;
         opacity: .2;
         flex-shrink: 0;
     }
@@ -68,6 +67,17 @@ section {
         background-color: $main-text-color;
         margin: 0 35px;
         opacity: .2;
+    }
+}
+
+.section-title__subheader_form {
+
+    &::before {
+        margin: 0 15px 0 0;
+    }
+
+    &::after {
+        margin: 0 0 0 15px;
     }
 }
 

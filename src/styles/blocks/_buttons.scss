@@ -5,6 +5,7 @@
     font-weight: 500;
     border-radius: 5px;
     transition: background-color 1s;
+    font-family: $main-font;
 }
 
 .btn_auth {
@@ -34,4 +35,23 @@
     height: 22px;
     display: inline-block;
     margin-right: 10px;
+}
+
+.btn_form {
+    width: 50%;
+    background-color: $accent-color;
+    font-weight: 500;
+    color: $white-color;
+    border: 0;
+    border-radius: 0;
+    border-right: solid 2px #6fd1c6;
+    padding: 10px 30px;
+
+    &:hover {
+        background-color: $accent-darken-color;
+    }
+
+    &:last-child {
+        border-right: 0;
+    }
 }

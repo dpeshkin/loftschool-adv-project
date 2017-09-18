@@ -1,6 +1,6 @@
 .mentions {
     padding-top: 35px;
-    background: url('../images/mentions/mentions-bg.jpg') center;
+    background: url('../images/mentions/mentions-bg.jpg') center top;
     background-size: cover;
     min-height: 1200px;
 }
@@ -19,8 +19,8 @@
     display: flex;
     justify-content: center;
     margin-bottom: 55px;
-    
 }
+
 .mentions__content {
     display: flex;
     align-items: center;
@@ -68,5 +68,5 @@
 }
 
 .mentions__feedback {
-    background-color: rgba($white-color, .8);
+    display: flex;
 }
