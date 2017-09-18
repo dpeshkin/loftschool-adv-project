@@ -3,6 +3,7 @@
     background: url('../images/mentions/mentions-bg.jpg') center top;
     background-size: cover;
     min-height: 1200px;
+    background-attachment: fixed;
 }
 
 .mention__icon {
@@ -69,4 +70,5 @@
 
 .mentions__feedback {
     display: flex;
+    background: inherit;
 }

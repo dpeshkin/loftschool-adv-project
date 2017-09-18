@@ -115,6 +115,11 @@ block content
         .mentions__feedback
             .feedback
                 .feedback__wrapper
+                    svg(xmlns='http://www.w3.org/2000/svg', version='1.1', style='display: none')
+                        defs
+                            filter#blur
+                                fegaussianblur(in='SourceGraphic', stddeviation='10,10')
+
                     .feedback__header
                         .section-title__subheader.section-title__subheader_form Связаться со мной
                     .feedback__form
@@ -125,6 +130,7 @@ block content
                 .feedback__buttons
                     button(form='feedback-form', type='submit', class='btn btn_form') Отправить
                     button(form='feedback-form', type='reset', class='btn btn_form') Очистить
+
                 
 
 

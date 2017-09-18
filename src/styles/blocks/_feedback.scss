@@ -1,13 +1,26 @@
 .feedback {
     max-width: 380px;
-    background-color: rgba($white-color, .8);
+    background: inherit;
     margin: 0 auto;
     border-radius: 5px;
     overflow: hidden;
+    position: relative;
+
+    &::before {
+        background: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        filter: url(#blur);
+    }
 }
 
 .feedback__wrapper {
     padding: 35px 20px 0;
+    position: relative;
 }
 
 .feedback__header {
@@ -29,4 +42,5 @@
 
 .feedback__buttons {
     display: flex;
+    position: relative;
 }
