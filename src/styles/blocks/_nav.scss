@@ -7,6 +7,8 @@
     color: $white-color;
     font-weight: 500;
     display: inline-block;
+    white-space: nowrap;
+
 }
 
 .nav__list_blog {
@@ -35,6 +37,10 @@
 
     &:hover {
         background-color: $accent-darken-color;
+    }
+
+    @include phones {
+        padding: 10px 22px;
     }
 }
 

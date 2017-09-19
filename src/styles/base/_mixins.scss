@@ -12,23 +12,11 @@
     }
 }
 
-@mixin circle($width, $color) {
-    width: $width;
-    height: $width;
-    border-radius: $width / 2;
-    background-color: $color;
-}
 
-%clearfix {
-    &::after {
-        content: '';
-        display: block;
-        clear: both;
+@mixin laptops {
+    @media screen and (max-width: $laptops) {
+        @content;
     }
-}
-
-@function rem($px) {
-    @return $px / $html-text-size + rem;
 }
 
 @mixin tablets {

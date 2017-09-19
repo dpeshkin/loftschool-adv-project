@@ -15,6 +15,10 @@ body {
     width: 100%;
     line-height: 24px;
     color: $main-text-color;
+
+    @include phones {
+        font-size: 4.375vw;
+    }
 }
 
 h1,

@@ -38,4 +38,14 @@
 
 .footer__copyright {
     opacity: .5;
+    text-align: center;
+
+    @include phones {
+        max-width: 85%;
+    }
+}
+
+.footer__span {
+    white-space: nowrap;
+    display: inline-block;
 }

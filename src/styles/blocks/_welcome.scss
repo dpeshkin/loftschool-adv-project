@@ -16,6 +16,14 @@
     position: absolute;
     top: 24px;
     right: 100px;
+
+    @include laptops {
+        right: 20px;
+    }
+
+    @include phones {
+        right: initial;
+    }
 }
 
 .welcome__main {
@@ -26,6 +34,7 @@
     flex-direction: column;
     align-items: center;
     opacity: .85;
+    margin: 0 10px;
 }
 
 .welcome__socials {

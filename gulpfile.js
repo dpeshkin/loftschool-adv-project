@@ -13,7 +13,8 @@ const gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     cheerio = require('gulp-cheerio'),
     replace = require('gulp-replace'),
-    sassLint = require('gulp-sass-lint');
+    sassLint = require('gulp-sass-lint'),
+    cssunit = require('gulp-css-unit');
 
 //paths
 const paths = {
@@ -74,6 +75,7 @@ function styles() {
                 "no-color-literals": 0,
                 "url-quotes": 0,
                 "force-element-nesting": 0,
+                "mixins-before-declarations": 0,
                 "indentation": [
                     1,
                     {
@@ -89,6 +91,10 @@ function styles() {
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
+        }))
+        .pipe(cssunit({
+            type     :    'px-to-rem',
+            rootSize :    16
         }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.styles.dest))
