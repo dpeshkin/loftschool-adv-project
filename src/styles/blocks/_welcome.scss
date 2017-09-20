@@ -3,6 +3,10 @@
     background-size: cover;
     height: 100vh;
     min-height: 650px;
+
+    @include phones {
+        min-height: initial;
+    }
 }
 
 .container {
@@ -23,6 +27,7 @@
 
     @include phones {
         right: initial;
+        top: 10px;
     }
 }
 
@@ -37,6 +42,10 @@
     margin: 0 10px;
 }
 
+.welcome__person {
+    margin-bottom: 35px;
+}
+
 .welcome__socials {
-    margin: 35px 0;
+    margin-bottom: 35px;
 }

@@ -22,6 +22,10 @@
     .header__person {
         margin-bottom: 0;
     }
+
+    @include phones {
+        height: auto;
+    }
 }
 
 .header__socials,

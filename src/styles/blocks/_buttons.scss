@@ -7,6 +7,10 @@
     transition: background-color 1s;
     font-family: $main-font;
     font-size: $html-text-size;
+
+    @include phones {
+        font-size: 14px;
+    }
 }
 
 .btn_auth {

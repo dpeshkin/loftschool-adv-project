@@ -16,7 +16,7 @@
     margin: 40px 0 20px;
 
     @include phones {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 }
 
@@ -24,6 +24,10 @@
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 10px;
+
+    @include phones {
+        font-size: 21px;
+    }
 }
 
 .person__caption {

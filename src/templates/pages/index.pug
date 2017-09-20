@@ -11,11 +11,12 @@ block content
                 a(href="#").btn.btn_auth Авторизоваться
 
             .welcome__main
-                .person
-                    .person__photo
-                        img.responsive-img(src="assets/images/myphoto.jpg")
-                    .person__name Дмитрий Пешкин
-                    .person__caption Личный сайт веб разработчика
+                .welcome__person
+                    .person
+                        .person__photo
+                            img.responsive-img(src="assets/images/myphoto.jpg")
+                        .person__name Дмитрий Пешкин
+                        .person__caption Личный сайт веб разработчика
                 .welcome__socials
                     +socialList('social__list_welcome','icon_fill_accent', socials, '')
                 .welcome__buttons
