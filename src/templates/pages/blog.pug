@@ -6,8 +6,8 @@ block title
 
 block content
     section.section.header.header_blog
-        .header__socials
-            +socialList('welcome', socials, '')
+        .header__socials.socials
+            +socialList('social__list_header','icon_fill_white', socials, '')
         .header__menu-button
             a.nav-toggle(href="#")
                 span.nav-toggle__button
@@ -21,7 +21,7 @@ block content
             .section-title.section-title_color_white
                 .section-title__header Блог
                     .section-title__bg.section-title__bg_blog
-                        +icon('header-title-bg', 'blog_header')
+                        +icon('icon_fill_white', 'blog_header')
                 .section-title__caption Статьи, которые я написал
 
     section.blog
@@ -57,10 +57,14 @@ block content
     
     footer.footer.footer_darken
         .footer__row
-            .footer__nav
-                +navList('nav__list_footer', 'nav__link_footer', navItems)
-            .footer__socials
-                +socialList('footer', socials, '_round')
+            .footer__row-item
+                .footer__nav
+                    +navList('nav__list_footer', 'nav__link_footer', navItems)
+            .footer__row-item
+                .footer__socials.socials
+                    +socialList('social__list_footer', 'icon_footer', socials, '_round')
         .footer__row
-            .footer__descr Я веб-разработчик из Екатеринбурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
-            .footer__copyright © Дмитрий Пешкин | создано в LoftSchool | 2017
+            .footer__row-item
+                .footer__descr Я веб-разработчик из Екатеринбурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+            .footer__row-item
+                .footer__copyright © Дмитрий Пешкин | создано в LoftSchool | 2017

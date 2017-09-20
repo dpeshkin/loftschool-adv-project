@@ -1,16 +1,47 @@
 .mentions {
-    padding-top: 35px;
+    padding: 35px 20px 0;
     background: url('../images/mentions/mentions-bg.jpg') center top;
     background-size: cover;
-    min-height: 1200px;
     background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+
+    @include tablets {
+        font-size: 14px;
+    }
+}
+
+.mentions__content {
+    background: inherit;
+
+    &::after {
+        content: '';
+        display: block;
+        margin-bottom: 150px;
+        height: 1px;
+    }
+
+    @include tablets {
+
+        &::after {
+            margin-bottom: 235px;
+        }
+    }
+}
+
+.mentions__list {
+    display: flex;
+}
+
+.mention__quote {
+    margin-bottom: 25px;
+
+    @include tablets {
+        margin-bottom: 15px;
+    }
 }
 
 .mention__icon {
-    margin-bottom: 25px;
-}
-
-.mention__icon-quote {
     width: 34px;
     height: 30px;
     opacity: .2;
@@ -20,13 +51,21 @@
     display: flex;
     justify-content: center;
     margin-bottom: 55px;
+
+    @include tablets {
+        margin-bottom: 35px;
+    }
 }
 
-.mentions__content {
+.mentions__opinions {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-bottom: 70px;
+
+    @include tablets {
+        margin-bottom: 50px;
+    }
 }
 
 .mentions__item {
@@ -37,12 +76,36 @@
     }
 }
 
+.mentions__feedback {
+    display: flex;
+    background: inherit;
+    margin-bottom: 70px;
+
+    @include tablets {
+        margin-bottom: 100px;
+    }
+}
+
+.mentions__scroll {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+
+    @include tablets {
+        margin-bottom: 50px;
+    }
+}
+
 .mention {
     max-width: 380px;
 }
 
 .mention__text {
     margin-bottom: 25px;
+
+    @include tablets {
+        margin-bottom: 15px;
+    }
 }
 
 .owner {
@@ -55,6 +118,7 @@
     height: 80px;
     overflow: hidden;
     margin-right: 20px;
+    flex-shrink: 0;
 }
 
 .owner__desc {
@@ -66,9 +130,4 @@
 
 .owner__name {
     font-weight: 500;
-}
-
-.mentions__feedback {
-    display: flex;
-    background: inherit;
 }

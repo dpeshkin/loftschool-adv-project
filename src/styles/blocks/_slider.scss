@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     height: 100%;
     flex-direction: column;
+
 }
 
 .slider__description {
@@ -12,6 +13,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 60px 0;
+
+    @include tablets {
+        width: 100%;
+        order: 2;
+    }
 }
 
 .slider__image {
@@ -20,12 +27,23 @@
     align-items: center;
     display: flex;
     background-color: $slider-bg-color;
+    padding: 30px 0;
+
+    @include tablets {
+        width: 100%;
+        order: 1;
+    }
 }
 
 .slider__controls {
     width: 50%;
     height: 25%;
     display: flex;
+
+    @include tablets {
+        width: 100%;
+        order: 3;
+    }
 }
 
 .controls__left,
@@ -58,10 +76,13 @@
     width: 45px;
     height: 30px;
     position: relative;
+    z-index: 1;
 }
 
 .controls__icon-bg {
     position: absolute;
+    width: 45px;
+    height: 30px;
     left: 0;
     top: 2px;
     z-index: -1;

@@ -10,18 +10,18 @@ block content
     section.section.header
         .header__bg
             .header__bg-icon
-                +icon('header-title-bg','portfolio_header')
+                +icon('icon_fill_white','portfolio_header')
+
+        .header__socials.socials
+            +socialList('social__list_header','icon_fill_white', socials, '')
+
+        .header__menu-button
+            a.nav-toggle(href="#")
+                span.nav-toggle__button
+        .fs-nav
+            +navList('nav__list_fs', 'nav__link_fs', navItems)
 
         .header__content
-            .header__socials.socials
-                +socialList('welcome', socials, '')
-
-            .header__menu-button
-                a.nav-toggle(href="#")
-                    span.nav-toggle__button
-            .fs-nav
-                +navList('nav__list_fs', 'nav__link_fs', navItems)
-
             .header__person
                 .person.person_head
                     .person__photo
@@ -29,8 +29,10 @@ block content
                     .person__name Дмитрий Пешкин
                     .person__caption Личный сайт веб разработчика
 
-            .header__arrow
-                +icon('arrow', 'arrow_down')
+        .header__scroll.scroll
+            a.scroll__link(href='#')
+                .scroll__icon
+                    +icon('icon_fill_white', 'arrow_down')
     
     section.section.my-works
         .section__triangle.section__triangle_left
@@ -45,7 +47,7 @@ block content
         .my-works__header
             .section-title__header Мои работы
                 .section-title__bg
-                    +icon('section-title-bg', 'works_header')
+                    +icon('icon_fill_black', 'works_header')
 
         .my-works__slider
             .slider
@@ -57,7 +59,7 @@ block content
                         .project__link
                             a.btn.btn_show(href='#')
                                 .btn__icon
-                                    +icon('link','link')
+                                    +icon('icon_fill_white','link')
                                 span Посмотреть сайт
 
 
@@ -67,84 +69,90 @@ block content
                     .controls__left
                         .controls__caption
                             .controls__icon
-                                +icon('slider-control', 'portf_arrow_down')
+                                +icon('icon_fill_white', 'portf_arrow_down')
                                 .controls__icon-bg
-                                    +icon('slider-control-shadow', 'portf_arrow_down')
+                                    +icon('icon_fill_black', 'portf_arrow_down')
                         .controls__bg
                             img.responsive-img(src='assets/images/my-works/work-2.jpg')
                     .controls__right
                         .controls__caption
                             .controls__icon
-                                +icon('slider-control', 'portf_arrow_up')
+                                +icon('icon_fill_white', 'portf_arrow_up')
                                 .controls__icon-bg
-                                    +icon('slider-control-shadow', 'portf_arrow_up')
+                                    +icon('icon_fill_blach', 'portf_arrow_up')
                         .controls__bg
                             img.responsive-img(src='assets/images/my-works/work-3.jpg')
 
     section.section.mentions
-        .mentions__header
-            .section-title__header Что обо мне говорят
-                .section-title__bg
-                    +icon('section-title-bg', 'about_header')
         .mentions__content
-            ul.mentions__list
-                li.mentions__item
-                    .mention
-                        .mention__icon
-                            .mention__icon-quote
-                                +icon('quote','quote')
-                        .mention__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                        .mention__owner
-                            .owner
-                                .owner__photo
-                                    img.responsive-img(src='assets/images/mentions/owner-1.jpg')
-                                .owner__desc 
-                                    .owner__name Ковальчук Дмитрий
-                                    .owner__position основатель Liftschool
-                li.mentions__item
-                    .mention
-                        .mention__icon
-                            .mention__icon-quote
-                                +icon('quote','quote')
-                        .mention__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-                        .mention__owner
-                            .owner
-                                .owner__photo
-                                    img.responsive-img(src='assets/images/mentions/owner-2.jpg')
-                                .owner__desc 
-                                    .owner__name Сабанцев Владимир
-                                    .owner__position преподаватель      
+            .mentions__header
+                .section-title__header Что обо мне говорят
+                    .section-title__bg
+                        +icon('icon_fill_black', 'about_header')
+            .mentions__opinions
+                ul.mentions__list
+                    li.mentions__item
+                        .mention
+                            .mention__quote
+                                .mention__icon
+                                    +icon('quote','quote')
+                            .mention__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                            .mention__owner
+                                .owner
+                                    .owner__photo
+                                        img.responsive-img(src='assets/images/mentions/owner-1.jpg')
+                                    .owner__desc 
+                                        .owner__name Ковальчук Дмитрий
+                                        .owner__position основатель Liftschool
+                    li.mentions__item
+                        .mention
+                            .mention__quote
+                                .mention__icon
+                                    +icon('quote','quote')
+                            .mention__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                            .mention__owner
+                                .owner
+                                    .owner__photo
+                                        img.responsive-img(src='assets/images/mentions/owner-2.jpg')
+                                    .owner__desc 
+                                        .owner__name Сабанцев Владимир
+                                        .owner__position преподаватель      
 
-        .mentions__feedback
-            .feedback
-                .feedback__wrapper
-                    svg(xmlns='http://www.w3.org/2000/svg', version='1.1', style='display: none')
-                        defs
-                            filter#blur
-                                fegaussianblur(in='SourceGraphic', stddeviation='10,10')
+            .mentions__feedback
+                .feedback
+                    .feedback__wrapper
+                        svg(xmlns='http://www.w3.org/2000/svg', version='1.1', style='display: none')
+                            defs
+                                filter#blur
+                                    fegaussianblur(in='SourceGraphic', stddeviation='10,10')
 
-                    .feedback__header
-                        .section-title__subheader.section-title__subheader_form Связаться со мной
-                    .feedback__form
-                        form(id='feedback-form', class='form')
-                            input(type='text', id='name', placeholder='Имя', class='form__input')
-                            input(type='enail', id='email', placeholder='Email', class='form__input')
-                            textarea(id='message', rows='3', class='form__input', placeholder='Ваше сообщение')
-                .feedback__buttons
-                    button(form='feedback-form', type='submit', class='btn btn_form') Отправить
-                    button(form='feedback-form', type='reset', class='btn btn_form') Очистить
+                        .feedback__header
+                            .section-title__subheader.section-title__subheader_form Связаться со мной
+                        .feedback__form
+                            form(id='feedback-form', class='form')
+                                input(type='text', id='name', placeholder='Имя', class='form__input')
+                                input(type='enail', id='email', placeholder='Email', class='form__input')
+                                textarea(id='message', rows='3', class='form__input', placeholder='Ваше сообщение')
+                    .feedback__buttons
+                        button(form='feedback-form', type='submit', class='btn btn_form') Отправить
+                        button(form='feedback-form', type='reset', class='btn btn_form') Очистить
 
-                
-
-
+            .mentions__scroll.scroll
+                a.scroll__link(href='#')
+                    .scroll__icon
+                        +icon('icon_fill_white', 'portf_arrow_up')    
 
     footer.footer.footer_darken
         .footer__row
-            .footer__nav
-                +navList('nav__list_footer', 'nav__link_footer', navItems)
-            .footer__socials.socials
-                +socialList('footer', socials, '_round')
+            .footer__row-item
+                .footer__nav
+                    +navList('nav__list_footer', 'nav__link_footer', navItems)
+            .footer__row-item
+                .footer__socials.socials
+                    +socialList('social__list_footer', 'icon_footer', socials, '_round')
         .footer__row
-            .footer__descr Я веб-разработчик из Екатеринбурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
-            .footer__copyright © Дмитрий Пешкин | создано в LoftSchool | 2017
+            .footer__row-item
+                .footer__descr Я веб-разработчик из Екатеринбурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+            .footer__row-item
+                .footer__copyright © Дмитрий Пешкин | создано в LoftSchool | 2017
     

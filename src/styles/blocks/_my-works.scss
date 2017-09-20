@@ -1,13 +1,25 @@
 .my-works {
     padding-top: 35px;
+
+    @include tablets {
+        padding-top: 10px;
+    }
 }
 
 .my-works__header {
     display: flex;
     justify-content: center;
     margin-bottom: 55px;
+
+    @include tablets {
+        margin-bottom: 35px;
+    }
 }
 
 .my-works__slider {
     height: 750px;
+
+    @include tablets {
+        height: auto;
+    }
 }

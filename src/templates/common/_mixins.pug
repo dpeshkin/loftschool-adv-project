@@ -1,12 +1,13 @@
-mixin socialList(iconModifier, items, svgIdModifier)
+mixin socialList(socialListModifier, svgModifier, items, svgIdModifier)
     if !svgIdModifier
         - var svgIdModifier = ''
-    ul.social__list
+    ul(class='social__list' + ' ' + socialListModifier)
         each item in items
             li.social__item
                 a(href=item.href target="_blank" class='social__link')
-                    svg(class='icon icon_' + iconModifier)
-                        use(xlink:href='assets/images/icons/sprite.svg#' + item.id + svgIdModifier)
+                    .social__icon
+                        svg(class='icon' + ' ' + svgModifier)
+                            use(xlink:href='assets/images/icons/sprite.svg#' + item.id + svgIdModifier)
 
 mixin navList(navListModifier, navLinkModifier, items, itemsReduceFactor)
     if !itemsReduceFactor
@@ -33,7 +34,7 @@ mixin skills-list(skillsList)
                                         .skill__title= values[i].skillName
 
 mixin icon(iconModifier, svgId)
-    svg(class='icon icon_' + iconModifier)
+    svg(class='icon' + ' ' + iconModifier)
         use(xlink:href='assets/images/icons/sprite.svg#' + svgId)
 
 mixin blog-article(articleHeader, articleDate)

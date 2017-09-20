@@ -92,10 +92,10 @@ function styles() {
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(cssunit({
-            type     :    'px-to-rem',
-            rootSize :    16
-        }))
+        // .pipe(cssunit({
+        //     type     :    'px-to-rem',
+        //     rootSize :    16
+        // }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.styles.dest))
 }

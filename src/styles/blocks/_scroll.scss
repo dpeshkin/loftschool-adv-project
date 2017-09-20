@@ -1,0 +1,13 @@
+.scroll__link {
+    z-index: 1;
+}
+
+.scroll__icon {
+    width: 26px;
+    height: 16px;
+    opacity: .7;
+
+    &:hover {
+        opacity: 1;
+    }
+}
