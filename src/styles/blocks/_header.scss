@@ -9,6 +9,11 @@
     @include tablets {
         padding-top: 75px;
     }
+
+    @include phones {
+        height: 100vh;
+        justify-content: space-between;
+    }
 }
 
 .header_blog {
@@ -54,7 +59,7 @@
     }
 
     @include phones {
-        right: 15px;
+        right: 10px;
     }
 }
 
@@ -75,6 +80,10 @@
     margin: 0 0 70px;
     display: flex;
     justify-content: center;
+
+    @include phones {
+        margin-bottom: 60px;
+    }
 }
 
 .header__bg {

@@ -9,6 +9,10 @@
     @include tablets {
         font-size: 14px;
     }
+
+    @include phones {
+        padding: 35px 10px 0;
+    }
 }
 
 .mentions__content {
@@ -27,17 +31,49 @@
             margin-bottom: 235px;
         }
     }
+
+    @include phones {
+
+        &::after {
+            margin-bottom: 245px;
+        }
+    }
 }
 
 .mentions__list {
     display: flex;
+
+    @include phones {
+        flex-direction: column;
+    }
+}
+
+.mentions__item {
+    margin-right: 20px;
+
+    &:nth-child(even) {
+        margin-right: 0;
+    }
+
+    @include phones {
+        margin: 0 0 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .mention__quote {
     margin-bottom: 25px;
+    display: flex;
 
     @include tablets {
         margin-bottom: 15px;
+    }
+
+    @include phones {
+        justify-content: center;
     }
 }
 
@@ -66,13 +102,9 @@
     @include tablets {
         margin-bottom: 50px;
     }
-}
 
-.mentions__item {
-    margin-right: 20px;
-
-    &:nth-child(even) {
-        margin-right: 0;
+    @include phones {
+        margin-bottom: 30px;
     }
 }
 
@@ -84,6 +116,10 @@
     @include tablets {
         margin-bottom: 100px;
     }
+
+    @include phones {
+        margin-bottom: 50px;
+    }
 }
 
 .mentions__scroll {
@@ -93,6 +129,10 @@
 
     @include tablets {
         margin-bottom: 50px;
+    }
+
+    @include phones {
+        margin-bottom: 40px;
     }
 }
 
@@ -119,6 +159,11 @@
     overflow: hidden;
     margin-right: 20px;
     flex-shrink: 0;
+
+    @include phones {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .owner__desc {

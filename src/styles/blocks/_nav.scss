@@ -79,6 +79,13 @@
         margin-bottom: 80px;
         text-align: center;
     }
+
+    @include phones {
+
+        .nav__item {
+            margin-bottom: 50px;
+        }
+    }
 }
 
 .nav__link_fs {
@@ -90,6 +97,10 @@
 
     @include tablets {
         font-size: 49px;
+    }
+
+    @include phones {
+        font-size: 35px;
     }
 
     &::before,
