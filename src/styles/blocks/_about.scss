@@ -1,5 +1,10 @@
 .about {
     display: flex;
+    flex-wrap: wrap;
+
+    @include tablets {
+        font-size: 14px;
+    }
 }
 
 .about__left,
@@ -8,15 +13,47 @@
     display: flex;
     padding: 0 20px;
     position: relative;
+    flex-wrap: wrap;
+
+    @include tablets {
+        width: 100%;
+        padding: 45px 108px 0;
+    }
+
+    @include phones {
+        padding: 25px 10px 0;
+    }
 }
 
 .about__left {
     background-color: $beige-color;
+
+    @include laptops {
+        flex-direction: column;
+    }
 }
 
 .about__left-header,
 .about__left-content {
     width: 50%;
+
+    @include laptops {
+        width: 100%;
+        max-width: 445px;
+        margin: 0 auto;
+    }
+
+    @include tablets {
+        max-width: 472px;
+    }
+}
+
+.about__left-header {
+    margin-bottom: 45px;
+
+    @include phones {
+        margin-bottom: 30px;
+    }
 }
 
 .about__triangle {

@@ -2,6 +2,10 @@
     height: 100vh;
     background: url('../images/map_bg.jpg') center top;
     background-size: cover;
+
+    @include phones {
+        min-height: 925px;
+    }
 }
 
 .map__contacts {
@@ -14,4 +18,8 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+
+    @include phones {
+        align-items: flex-start;
+    }
 }

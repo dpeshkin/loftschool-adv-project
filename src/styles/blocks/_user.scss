@@ -1,7 +1,26 @@
+.user {
+
+    @include tablets {
+        margin-bottom: 50px;
+    }
+
+    @include phones {
+        margin-bottom: 30px;
+    }
+}
+
 .user__photo {
     margin-bottom: 40px;
+
+    @include phones {
+        margin: 0 -10px 20px;
+    }
 }
 
 .user__title {
     margin-bottom: 40px;
+
+    @include phones {
+        margin-bottom: 20px;
+    }
 }
