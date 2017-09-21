@@ -1,12 +1,20 @@
 .blog {
     display: flex;
-    padding-top: 50px;
+    padding-top: 40px;
     position: relative;
 }
 
 .blog__left {
-    width: 400px;
+    width: 300px;
     margin: 0 120px 0 auto;
+
+    @include laptops {
+        margin-right: 100px;
+    }
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .blog__nav {
@@ -15,26 +23,66 @@
 }
 
 .blog__right {
-    width: 980px;
+    width: 900px;
     margin-right: auto;
+    padding-right: 20px;
+
+    @include laptops {
+        width: 700px;
+    }
+
+    @include tablets {
+        padding: 0 24px;
+        width: 100%;
+    }
+
+    @include phones {
+        padding: 0 10px;
+    }
 }
 
 .blog__article {
-    padding-bottom: 70px;
+    margin-bottom: 70px;
+
+    @include tablets {
+        margin-bottom: 50px;
+    }
+
+    @include phones {
+        margin-bottom: 30px;
+    }
 
     &::after {
         content: '';
-        width: 680px;
+        max-width: 680px;
         height: 5px;
         background-color: $light-grey-color;
         display: block;
         margin-top: 70px;
+
+        @include tablets {
+            max-width: 100%;
+            margin-top: 50px;
+        }
+
+        @include phones {
+            margin-top: 30px;
+        }
     }
 
     &:last-child {
         &::after {
-            height: 0;
-            margin-bottom: 140px;
+            height: 1px;
+            margin-bottom: 144px;
+            background-color: transparent;
+
+            @include tablets {
+                margin-bottom: 222px;
+            }
+
+            @include phones {
+                margin-bottom: 265px;
+            }
         }
     }
 }
@@ -43,16 +91,25 @@
     font-family: $header-font;
     font-size: 35px;
     margin-bottom: 30px;
+
+    @include tablets {
+        margin-bottom: 20px;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    @include phones {
+        font-size: 21px;
+        line-height: 28px;
+        margin-bottom: 10px;
+    }
 }
 
 .blog__article-date {
     color: $accent-color;
     margin-bottom: 30px;
-}
 
-.blog__article-content {
-
-    p {
-        width: 880px;
+    @include tablets {
+        margin-bottom: 15px;
     }
 }

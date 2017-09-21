@@ -58,6 +58,22 @@ section {
     }
 }
 
+.section-title__header_blog-header {
+    font-size: 63px;
+    line-height: 56px;
+    margin-bottom: 5px;
+
+    @include tablets {
+        font-size: 49px;
+        line-height: 52px;
+    }
+
+    @include phones {
+        font-size: 35px;
+        line-height: 42px;
+    }
+}
+
 .section-title__subheader {
     font-family: $header-font;
     font-size: $subheader-text-size;
@@ -126,10 +142,10 @@ section {
 .section-title__bg_blog {
     width: 150%;
     height: 220px;
-}
 
-.section-title__caption {
-    margin-bottom: 55px;
+    @include phones {
+        display: none;
+    }
 }
 
 .section__triangle {

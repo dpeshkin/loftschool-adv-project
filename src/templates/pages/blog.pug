@@ -13,16 +13,22 @@ block content
                 span.nav-toggle__button
         .fs-nav
             +navList('nav__list_fs', 'nav__link_fs', navItems)
-        .header__person
-            .person
-                .person__photo
-                    img.responsive-img(src="assets/images/myphoto.jpg")
-        .header__title
-            .section-title.section-title_color_white
-                .section-title__header Блог
-                    .section-title__bg.section-title__bg_blog
-                        +icon('icon_fill_white', 'blog_header')
-                .section-title__caption Статьи, которые я написал
+        .header__content
+            .header__person
+                .person
+                    .person__photo
+                        img.responsive-img(src="assets/images/myphoto.jpg")
+            .header__title
+                .section-title.section-title_color_white
+                    .section-title__header.section-title__header_blog-header Блог
+                        .section-title__bg.section-title__bg_blog
+                            +icon('icon_fill_white', 'blog_header')
+                    .section-title__caption Статьи, которые я написал
+
+        .header__scroll.header__scroll_blog.scroll
+            a.scroll__link(href='#')
+                .scroll__icon
+                    +icon('icon_fill_white', 'arrow_down')
 
     section.blog
         .section__triangle.section__triangle_left
