@@ -11,44 +11,104 @@
   <body>
     <div class="wrapper">
       <section class="welcome">
-        <div class="container">
-          <div class="welcome__auth"><a class="btn btn_auth" href="#">Авторизоваться</a></div>
-          <div class="welcome__main">
-            <div class="welcome__person">
-              <div class="person">
-                <div class="person__photo"><img class="responsive-img" src="assets/images/myphoto.jpg"></div>
-                <div class="person__name">Дмитрий Пешкин</div>
-                <div class="person__caption">Личный сайт веб разработчика</div>
+        <div class="welcome__auth-btn"><a class="btn btn_auth" href="#">Авторизоваться</a></div>
+        <div class="welcome__content">
+          <div class="welcome__flipper">
+            <div class="flipper">
+              <div class="flipper__front">
+                <div class="welcome__person">
+                  <div class="person">
+                    <div class="person__photo"><img class="responsive-img" src="assets/images/myphoto.jpg"></div>
+                    <div class="person__name">Дмитрий Пешкин</div>
+                    <div class="person__caption">Личный сайт веб разработчика</div>
+                  </div>
+                </div>
+                <div class="welcome__socials">
+                  <ul class="social__list social__list_welcome">
+                    <li class="social__item"><a class="social__link" href="https://vk.com/id5299005" target="_blank">
+                        <div class="social__icon">
+                          <svg class="icon icon_fill_accent">
+                            <use xlink:href="assets/images/icons/sprite.svg#vk"></use>
+                          </svg>
+                        </div></a></li>
+                    <li class="social__item"><a class="social__link" href="https://github.com/ekb196" target="_blank">
+                        <div class="social__icon">
+                          <svg class="icon icon_fill_accent">
+                            <use xlink:href="assets/images/icons/sprite.svg#github"></use>
+                          </svg>
+                        </div></a></li>
+                    <li class="social__item"><a class="social__link" href="#" target="_blank">
+                        <div class="social__icon">
+                          <svg class="icon icon_fill_accent">
+                            <use xlink:href="assets/images/icons/sprite.svg#in"></use>
+                          </svg>
+                        </div></a></li>
+                  </ul>
+                </div>
+                <div class="welcome__buttons">
+                  <ul class="nav__list nav__list_welcome">
+                    <li class="nav__item"><a class="nav__link nav__link_welcome" href="my-works.html">Мои работы</a></li>
+                    <li class="nav__item"><a class="nav__link nav__link_welcome" href="about.html">Обо мне</a></li>
+                    <li class="nav__item"><a class="nav__link nav__link_welcome" href="blog.html">Блог</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="welcome__socials">
-              <ul class="social__list social__list_welcome">
-                <li class="social__item"><a class="social__link" href="https://vk.com/id5299005" target="_blank">
-                    <div class="social__icon">
-                      <svg class="icon icon_fill_accent">
-                        <use xlink:href="assets/images/icons/sprite.svg#vk"></use>
-                      </svg>
-                    </div></a></li>
-                <li class="social__item"><a class="social__link" href="https://github.com/ekb196" target="_blank">
-                    <div class="social__icon">
-                      <svg class="icon icon_fill_accent">
-                        <use xlink:href="assets/images/icons/sprite.svg#github"></use>
-                      </svg>
-                    </div></a></li>
-                <li class="social__item"><a class="social__link" href="#" target="_blank">
-                    <div class="social__icon">
-                      <svg class="icon icon_fill_accent">
-                        <use xlink:href="assets/images/icons/sprite.svg#in"></use>
-                      </svg>
-                    </div></a></li>
-              </ul>
-            </div>
-            <div class="welcome__buttons">
-              <ul class="nav__list nav__list_welcome">
-                <li class="nav__item"><a class="nav__link nav__link_welcome" href="my-works.html">Мои работы</a></li>
-                <li class="nav__item"><a class="nav__link nav__link_welcome" href="about.html">Обо мне</a></li>
-                <li class="nav__item"><a class="nav__link nav__link_welcome" href="blog.html">Блог</a></li>
-              </ul>
+              <div class="flipper__back">
+                <div class="welcome__title">
+                  <div class="section-title__subheader section-title__subheader_login">Авторизуйтесь</div>
+                </div>
+                <div class="welcome__login-form">
+                  <form class="form" id="login">
+                    <div class="form__field">
+                      <input class="form__input form__input_login" type="login" placeholder="Логин">
+                      <div class="form__field-icon">
+                        <svg class="icon icon_fill_dark-grey">
+                          <use xlink:href="assets/images/icons/sprite.svg#login"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="form__field">
+                      <input class="form__input form__input_login" type="password" placeholder="Пароль">
+                      <div class="form__field-icon">
+                        <svg class="icon icon_fill_dark-grey">
+                          <use xlink:href="assets/images/icons/sprite.svg#password"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="form__line">
+                      <div class="form__checkbox">
+                        <input class="form__c" type="checkbox" id="robot">
+                        <label for="robot">Я человек
+                          <div class="checkbox-fake">
+                            <svg class="icon icon_fill_white">
+                              <use xlink:href="assets/images/icons/sprite.svg#check"></use>
+                            </svg>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form__line-title">Вы точно не робот?</div>
+                    <div class="form__line">
+                      <div class="form__radio">
+                        <input type="radio" id="robot-radio-1" name="robot-radio">
+                        <label for="robot-radio-1">Да
+                          <div class="radio-fake"></div>
+                        </label>
+                      </div>
+                      <div class="form__radio">
+                        <input type="radio" id="robot-radio-2" name="robot-radio">
+                        <label for="robot-radio-2">Не уверен
+                          <div class="radio-fake"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="welcome__back-buttons">
+                  <button class="btn btn_form" id="btn-main">На главную</button>
+                  <button class="btn btn_form" id="btn-login" form="login" type="submit">Войти</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

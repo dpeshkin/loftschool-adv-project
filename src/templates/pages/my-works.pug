@@ -130,9 +130,12 @@ block content
                             .section-title__subheader.section-title__subheader_form Связаться со мной
                         .feedback__form
                             form(id='feedback-form', class='form')
-                                input(type='text', id='name', placeholder='Имя', class='form__input')
-                                input(type='enail', id='email', placeholder='Email', class='form__input')
-                                textarea(id='message', rows='3', class='form__input', placeholder='Ваше сообщение')
+                                .form__field
+                                    input(type='text', id='name', placeholder='Имя', class='form__input')
+                                .form__field
+                                    input(type='enail', id='email', placeholder='Email', class='form__input')
+                                .form__field
+                                    textarea(id='message', rows='3', class='form__input', resize: none, placeholder='Ваше сообщение')
                     .feedback__buttons
                         button(form='feedback-form', type='submit', class='btn btn_form') Отправить
                         button(form='feedback-form', type='reset', class='btn btn_form') Очистить

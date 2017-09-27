@@ -6,7 +6,10 @@
     border-radius: 5px;
     transition: background-color 1s;
     font-family: $main-font;
+    line-height: 24px;
     font-size: $html-text-size;
+    cursor: pointer;
+    outline: 0;
 
     @include phones {
         font-size: 14px;
@@ -17,11 +20,16 @@
     color: $white-color;
     border: solid 1px $white-color;
     align-self: flex-start;
+    transition: background, color 1s ease-in-out;
 
     &:hover {
         background-color: $white-color;
         color: $accent-color;
     }
+}
+
+.btn_auth-hidden {
+    transform: translateY(-1000px);
 }
 
 .btn_show {

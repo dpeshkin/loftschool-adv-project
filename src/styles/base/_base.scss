@@ -48,6 +48,10 @@ p {
     margin-top: 0;
 }
 
+input, label {
+    cursor: pointer;
+}
+
 .wrapper {
     overflow: hidden;
     position: relative;

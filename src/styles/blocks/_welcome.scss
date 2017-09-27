@@ -3,20 +3,16 @@
     background-size: cover;
     height: 100vh;
     min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include phones {
         min-height: initial;
     }
 }
 
-.container {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.welcome__auth {
+.welcome__auth-btn {
     position: absolute;
     top: 24px;
     right: 100px;
@@ -31,15 +27,12 @@
     }
 }
 
-.welcome__main {
-    background-color: rgba(#fcfcfc, .85);
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: .85;
+.welcome__content {
     margin: 0 10px;
+}
+
+.welcome__flipper {
+    perspective: 1000px;
 }
 
 .welcome__person {
@@ -48,4 +41,31 @@
 
 .welcome__socials {
     margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.welcome__back-buttons {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+
+.back-buttons {
+    display: flex;
+    width: 100%;
+}
+
+.back-buttons__item {
+    width: 50%;
+    display: flex;
+}
+
+.welcome__title {
+    margin-bottom: 40px;
+}
+
+.welcome__login-form {
+    margin: 0 20px;
 }

@@ -127,6 +127,11 @@ section {
     font-size: 35px;
 }
 
+.section-title__subheader_login {
+    @include tablets {
+        font-size: 30px;
+    }
+}
 
 .section-title__bg {
     position: absolute;

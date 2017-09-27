@@ -6,22 +6,59 @@ block title
 
 block content
     section.welcome
-        .container
-            .welcome__auth
-                a(href="#").btn.btn_auth Авторизоваться
+        .welcome__auth-btn
+            a(href="#").btn.btn_auth Авторизоваться
 
-            .welcome__main
-                .welcome__person
-                    .person
-                        .person__photo
-                            img.responsive-img(src="assets/images/myphoto.jpg")
-                        .person__name Дмитрий Пешкин
-                        .person__caption Личный сайт веб разработчика
-                .welcome__socials
-                    +socialList('social__list_welcome','icon_fill_accent', socials, '')
-                .welcome__buttons
-                    +navList('nav__list_welcome', 'nav__link_welcome', navItems, 1)
-     
+        .welcome__content
+            .welcome__flipper
+                .flipper
+                    .flipper__front
+                        .welcome__person
+                            .person
+                                .person__photo
+                                    img.responsive-img(src="assets/images/myphoto.jpg")
+                                .person__name Дмитрий Пешкин
+                                .person__caption Личный сайт веб разработчика
+                        .welcome__socials
+                            +socialList('social__list_welcome','icon_fill_accent', socials, '')
+                        .welcome__buttons
+                            +navList('nav__list_welcome', 'nav__link_welcome', navItems, 1)
+
+                    .flipper__back
+                        .welcome__title
+                            .section-title__subheader.section-title__subheader_login Авторизуйтесь
+                        .welcome__login-form
+                            form(id='login', class='form')
+                                .form__field
+                                    input.form__input.form__input_login(type = "login", placeholder='Логин')
+                                    .form__field-icon
+                                        +icon('icon_fill_dark-grey', 'login')  
+                                .form__field
+                                    input.form__input.form__input_login(type="password", placeholder='Пароль')
+                                    .form__field-icon
+                                        +icon('icon_fill_dark-grey', 'password')
+                                .form__line
+                                    .form__checkbox
+                                        input(type="checkbox" id='robot' class="form__c")
+                                        label(for='robot') Я человек
+                                            .checkbox-fake
+                                                +icon('icon_fill_white', 'check')
+
+                                .form__line-title Вы точно не робот?
+                                .form__line
+                                    .form__radio
+                                        input(type='radio' id='robot-radio-1' name='robot-radio')
+                                        label(for='robot-radio-1') Да
+                                            .radio-fake
+                                    .form__radio
+                                        input(type='radio' id='robot-radio-2' name='robot-radio')
+                                        label(for='robot-radio-2') Не уверен
+                                            .radio-fake
+                        .welcome__back-buttons
+                            button.btn.btn_form#btn-main На главную
+                            button.btn.btn_form#btn-login(form='login', type='submit') Войти
+
+
         footer.footer.footer_welcome
             .footer__copyright 
                 span.footer__span © Дмитрий Пешкин |

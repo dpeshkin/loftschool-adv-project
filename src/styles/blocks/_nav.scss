@@ -146,7 +146,7 @@
             height: 5px;
             border-radius: 3px;
             display: block;
-            transition: all 1s;
+            transition: transform 1s;
 
             @include phones {
                 height: 3px;
