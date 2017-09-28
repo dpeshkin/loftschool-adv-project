@@ -102,7 +102,7 @@ function styles() {
 
 // webpack
 function scripts() {
-    return gulp.src(paths.scripts.src)
+    return gulp.src('src/scripts/app.js')
         .pipe(gulpWebpack(webpackConfig, webpack))
         .pipe(gulp.dest(paths.scripts.dest));
 }

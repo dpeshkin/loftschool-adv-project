@@ -20,7 +20,7 @@
     color: $white-color;
     border: solid 1px $white-color;
     align-self: flex-start;
-    transition: background, color 1s ease-in-out;
+    transition: all 1s ease-in-out;
 
     &:hover {
         background-color: $white-color;
