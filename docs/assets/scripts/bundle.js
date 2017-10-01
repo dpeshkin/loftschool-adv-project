@@ -186,9 +186,58 @@ module.exports = scrollToElement;
 /* 4 */
 /***/ (function(module, exports) {
 
-var sticky = function () {
-    var nav = document.querySelector('.blog__nav');
-    // Element.getBoundingClientRect() разузнать что и как делает этот метод https://learn.javascript.ru/coordinates-document
+
+var Sticky = (function () {
+
+    const activeClass = 'sticky';
+
+    var Sticky = {
+        element: null,
+        addEvents: function () {
+            window.addEventListener('scroll', this.onScroll.bind(this));
+        },
+        getOffsetTop: function () {
+            var element = this.element;
+            var position = 0;
+            if (element.offsetParent) {
+                do {
+                    position += element.offsetTop;
+                    element = element.offsetParent;
+                } while (element);
+            }
+            return position;    
+        },
+        init: function (element) {
+            this.element = element;
+            this.addEvents();
+            this.onScroll();
+        },
+        aboveScroll: function () {
+            return this.getOffsetTop() < window.scrollY;
+        },
+        onScroll: function () {
+            if (this.aboveScroll()) {
+                this.setFixed();
+            } else {
+                this.setStatic();
+            }
+        },
+        setFixed: function () {
+            this.element.classList.add(activeClass);
+        },
+        setStatic: function () {
+            this.element.classList.remove(activeClass);
+        },
+    };
+    return Sticky;
+})();
+
+
+    //  Init Sticky
+var sticky = function() {
+    var element = document.querySelector('.blog__nav');
+    if (element)
+        Sticky.init(element);
 };
 
 module.exports = sticky;
