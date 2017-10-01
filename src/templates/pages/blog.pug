@@ -26,11 +26,11 @@ block content
                     .section-title__caption Статьи, которые я написал
 
         .header__scroll.header__scroll_blog.scroll
-            a.scroll__link(href='#')
+            a.scroll__link.scroll-to(href='#section-2')
                 .scroll__icon
                     +icon('icon_fill_white', 'arrow_down')
 
-    section.blog
+    section.blog#section-2
         .section__triangle.section__triangle_left
             .triangle.triangle_color_white
                 svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
@@ -41,22 +41,22 @@ block content
                     polygon(points="0,85 0,100 501,100 501,0")
         .blog__left
             .blog__nav
-                +navList('nav__list_blog', 'nav__link_blog', blogNavItems)
+                +navList('nav__list_blog', 'nav__link_blog scroll-to', blogNavItems)
         .blog__right
             .blog__content
-                .blog__article
+                .blog__article#article-1
                     +blog-article('Самое важное в Sass', '22 августа 2017')
                     .blog__article-content
                         include:markdown-it ../../blog-articles/about-sass.md
-                .blog__article
+                .blog__article#article-2
                     +blog-article('Лучшие практики верстки', '1 июля 2017')
                     .blog__article-content
                         include:markdown-it ../../blog-articles/best-practics.md
-                .blog__article
+                .blog__article#article-3
                     +blog-article('Самый необходимый набор Gulp-плагинов', '19 июня 2017')
                     .blog__article-content
                         include:markdown-it ../../blog-articles/gulp-plugins.md
-                .blog__article
+                .blog__article#article-4
                     +blog-article('Почему я выбрал Pug', '3 июня 2017')
                     .blog__article-content
                         include:markdown-it ../../blog-articles/why-pug.md
