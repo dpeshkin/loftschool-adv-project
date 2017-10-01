@@ -5,6 +5,7 @@ var Sticky = (function () {
 
     var Sticky = {
         element: null,
+        elementOffsetTop, 
         addEvents: function () {
             window.addEventListener('scroll', this.onScroll.bind(this));
         },
@@ -21,6 +22,7 @@ var Sticky = (function () {
         },
         init: function (element) {
             this.element = element;
+            this.elementOffsetTop = element.offsetTop;
             this.addEvents();
             this.onScroll();
         },
@@ -28,7 +30,7 @@ var Sticky = (function () {
             return this.getOffsetTop() < window.scrollY;
         },
         onScroll: function () {
-            if (this.aboveScroll()) {
+            if(whidow.scrollTop() > this.elementOffsetTop){
                 this.setFixed();
             } else {
                 this.setStatic();
