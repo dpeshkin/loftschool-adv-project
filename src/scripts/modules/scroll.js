@@ -47,7 +47,7 @@ var scrollToElement = function() {
     });
 
 };
-
+// почему то не всегда попадаем в нужное место на странице
 module.exports = scrollToElement;
 
 

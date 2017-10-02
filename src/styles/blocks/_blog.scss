@@ -5,7 +5,7 @@
 }
 
 .blog__left {
-    width: 300px;
+    width: 275px;
     margin: 0 120px 0 auto;
 
     @include laptops {
@@ -18,8 +18,7 @@
 }
 
 .blog__nav {
-    margin-left: auto;
-    width: 275px;
+    width: inherit;
 }
 
 .blog__right {

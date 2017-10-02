@@ -5,7 +5,7 @@ var Sticky = (function () {
 
     var Sticky = {
         element: null,
-        elementOffsetTop, 
+        elementOffsetTop: 0, 
         addEvents: function () {
             window.addEventListener('scroll', this.onScroll.bind(this));
         },
@@ -18,19 +18,17 @@ var Sticky = (function () {
                     element = element.offsetParent;
                 } while (element);
             }
-            return position;    
+            return position;  
         },
         init: function (element) {
             this.element = element;
-            this.elementOffsetTop = element.offsetTop;
+            this.elementOffsetTop = this.getOffsetTop();
             this.addEvents();
             this.onScroll();
         },
-        aboveScroll: function () {
-            return this.getOffsetTop() < window.scrollY;
-        },
+
         onScroll: function () {
-            if(whidow.scrollTop() > this.elementOffsetTop){
+            if(window.scrollY > this.elementOffsetTop - 20){
                 this.setFixed();
             } else {
                 this.setStatic();
@@ -46,8 +44,6 @@ var Sticky = (function () {
     return Sticky;
 })();
 
-
-    //  Init Sticky
 var sticky = function() {
     var element = document.querySelector('.blog__nav');
     if (element)

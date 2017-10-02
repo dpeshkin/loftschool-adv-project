@@ -60,6 +60,12 @@
     }
 }
 
+.nav__link_blog-active {
+    color: $accent-color;
+    font-weight: 500;
+    border-color: $accent-color;
+}
+
 .nav__link_footer {
     margin-right: 40px;
 
