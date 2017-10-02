@@ -72,12 +72,14 @@ const flipperRotate = __webpack_require__(2);
 const scroll = __webpack_require__(3);
 const sticky = __webpack_require__(4);
 const highlight = __webpack_require__(5);
+const parallax = __webpack_require__(6);
 
 navToggle();
 flipperRotate();
 scroll();
 sticky();
 highlight();
+parallax();
 
 /***/ }),
 /* 1 */
@@ -276,6 +278,40 @@ var highlighter = (function () {
 })();
 
 module.exports = highlighter.scroll; // метод или функцию надо экспортировать без скобок
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+var parallaxContainer = document.querySelector('.parallax'),
+    layers = parallaxContainer.children;
+
+var moveLayers = function (e) {
+    var initialX = (window.innerWidth / 2) - e.pageX;
+    var initialY = (window.innerHeight / 2) - e.pageY;
+
+    [].slice.call(layers).forEach(function (layer, index) {
+        var
+            divider = index / 100,
+            positionX = initialX * divider,
+            positionY = initialY * divider,
+            bottomPosition = (window.innerHeight / 2) * divider,
+            transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
+            image = layer.firstElementChild;
+
+        layer.style.transform = transformString;
+        image.style.bottom = '-' + bottomPosition + 'px';
+    });
+
+};
+
+var parallax = function () {
+    if (parallaxContainer)
+        window.addEventListener('mousemove', moveLayers);
+};
+
+module.exports = parallax;
 
 
 /***/ })

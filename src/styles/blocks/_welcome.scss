@@ -1,11 +1,14 @@
 .welcome {
-    background: url('../images/welcome-bg.jpg') center;
-    background-size: cover;
     height: 100vh;
     min-height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include tablets {
+        background: url('../images/welcome-bg.jpg') center;
+        background-size: cover;
+    }
 
     @include phones {
         min-height: initial;
