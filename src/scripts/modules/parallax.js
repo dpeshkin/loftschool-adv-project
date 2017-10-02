@@ -1,7 +1,7 @@
-var parallaxContainer = document.querySelector('.parallax'),
-    layers = parallaxContainer.children;
-
+var parallaxContainer = document.querySelector('.parallax');
+    
 var moveLayers = function (e) {
+    var layers = parallaxContainer.children;
     var initialX = -e.pageX;
     var initialY = -e.pageY;
 
