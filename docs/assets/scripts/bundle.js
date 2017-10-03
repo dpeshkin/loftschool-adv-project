@@ -284,10 +284,11 @@ module.exports = highlighter.scroll; // метод или функцию над�
 /* 6 */
 /***/ (function(module, exports) {
 
-var parallaxContainer = document.querySelector('.parallax');
+var parallaxMouseMove = document.querySelector('.parallax-mm');
+var parallaxScroll = document.querySelector('.parallax-scroll');
     
 var moveLayers = function (e) {
-    var layers = parallaxContainer.children;
+    var layers = parallaxMouseMove.children;
     var initialX = -e.pageX;
     var initialY = -e.pageY;
 
@@ -306,9 +307,27 @@ var moveLayers = function (e) {
 
 };
 
+var scrollLayers = function() {
+    var layerPhoto = parallaxScroll.querySelector('.header__content');
+    var layerBg = parallaxScroll.querySelector('.header__bg');
+    var scrollLenght = window.pageYOffset;
+
+    var move = function (element, scroll, integer) {
+        var position = Math.round(scroll * -integer)+'px';
+        element.style.transform = 'translateY(' + position + ')';
+    };
+    
+    if (layerPhoto)
+        move(layerPhoto, scrollLenght, .5);
+    if (layerBg)
+        move(layerBg, scrollLenght, .2);
+};
+
 var parallax = function () {
-    if (parallaxContainer)
+    if (parallaxMouseMove)
         window.addEventListener('mousemove', moveLayers);
+    if (parallaxScroll)
+        window.addEventListener('scroll', scrollLayers);
 };
 
 module.exports = parallax;
