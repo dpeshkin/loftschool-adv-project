@@ -73,6 +73,7 @@ const scroll = __webpack_require__(3);
 const sticky = __webpack_require__(4);
 const highlight = __webpack_require__(5);
 const parallax = __webpack_require__(6);
+const blur = __webpack_require__(7);
 
 navToggle();
 flipperRotate();
@@ -80,6 +81,7 @@ scroll();
 sticky();
 highlight();
 parallax();
+blur();
 
 /***/ }),
 /* 1 */
@@ -331,6 +333,23 @@ var parallax = function () {
 };
 
 module.exports = parallax;
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+const blur = (function (){
+    const block = document.querySelector('.feedback');
+    const checkOffsetTop = () => {
+        let distance = block.offsetTop;
+        block.style.backgroundPosition = 'center ' + -distance + 'px';
+    };
+    return {
+        init: checkOffsetTop,
+    };
+})();
+module.exports = blur.init;
 
 
 /***/ })

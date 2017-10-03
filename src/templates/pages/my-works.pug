@@ -5,9 +5,8 @@ block title
     - desc = "Мои работы"
 
 block content
-    
 
-    section.section.header
+    section.section.header.parallax-scroll
         .header__bg
             .header__bg-icon
                 +icon('icon_fill_white','portfolio_header')
@@ -139,7 +138,7 @@ block content
                     .feedback__buttons
                         button(form='feedback-form', type='submit', class='btn btn_form') Отправить
                         button(form='feedback-form', type='reset', class='btn btn_form') Очистить
-
+        
             .mentions__scroll.scroll
                 a.scroll__link.scroll-to(href='#')
                     .scroll__icon

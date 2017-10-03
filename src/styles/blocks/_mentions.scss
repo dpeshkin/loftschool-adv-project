@@ -1,10 +1,11 @@
 .mentions {
     padding: 35px 20px 0;
     background: url('../images/mentions/mentions-bg.jpg') center top;
-    background-size: cover;
-    background-attachment: fixed;
+    background-size: auto;
     display: flex;
     justify-content: center;
+    background-repeat: no-repeat;
+    position: relative;
 
     @include tablets {
         font-size: 14px;
@@ -16,7 +17,6 @@
 }
 
 .mentions__content {
-    background: inherit;
 
     &::after {
         content: '';
@@ -88,6 +88,13 @@
     justify-content: center;
     margin-bottom: 55px;
 
+    .section-title__header { //следущий код нужен для корректной работы JS offsetTop, иначе он определится некорректно!
+        &::before,
+        &::after {
+            margin: 0;
+        }
+    }
+
     @include tablets {
         margin-bottom: 35px;
     }
@@ -110,7 +117,6 @@
 
 .mentions__feedback {
     display: flex;
-    background: inherit;
     margin-bottom: 70px;
 
     @include tablets {
