@@ -5,6 +5,7 @@ const sticky = require('./modules/sticky.js');
 const highlight = require('./modules/highlightNav.js');
 const parallax = require('./modules/parallax.js');
 const blur = require('./modules/blur.js');
+const preloader = require('./modules/preloader.js');
 
 navToggle();
 flipperRotate();
@@ -13,3 +14,4 @@ sticky();
 highlight();
 parallax();
 blur();
+preloader();

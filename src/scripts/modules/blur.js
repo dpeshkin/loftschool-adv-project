@@ -1,8 +1,10 @@
 const blur = (function (){
     const block = document.querySelector('.feedback');
     const checkOffsetTop = () => {
-        let distance = block.offsetTop;
-        block.style.backgroundPosition = 'center ' + -distance + 'px';
+        if (block) {
+            let distance = block.offsetTop;
+            block.style.backgroundPosition = 'center ' + -distance + 'px';
+        }
     };
     window.onresize = () => {
         checkOffsetTop();

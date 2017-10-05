@@ -74,6 +74,7 @@ const sticky = __webpack_require__(4);
 const highlight = __webpack_require__(5);
 const parallax = __webpack_require__(6);
 const blur = __webpack_require__(7);
+const preloader = __webpack_require__(8);
 
 navToggle();
 flipperRotate();
@@ -82,6 +83,7 @@ sticky();
 highlight();
 parallax();
 blur();
+preloader();
 
 /***/ }),
 /* 1 */
@@ -342,18 +344,53 @@ module.exports = parallax;
 const blur = (function (){
     const block = document.querySelector('.feedback');
     const checkOffsetTop = () => {
-        let distance = block.offsetTop;
-        block.style.backgroundPosition = 'center ' + -distance + 'px';
+        if (block) {
+            let distance = block.offsetTop;
+            block.style.backgroundPosition = 'center ' + -distance + 'px';
+        }
     };
     window.onresize = () => {
         checkOffsetTop();
-    }
+    };
     return {
         init: checkOffsetTop,
     };
 })();
 module.exports = blur.init;
 
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+const preloader = (function () {
+    const images = document.images;
+    const imagesCount = images.length;
+    let imagesLoaded = 0;
+    const preloader = document.querySelector('.preloader');
+    const loadPercent = preloader.querySelector('.loaded');
+    const imageLoaded = () => {
+        loadPercent.innerHTML = Math.round((100 / imagesCount) * imagesLoaded) + '%';
+        imagesLoaded++;
+        if(imagesLoaded >= imagesCount){
+            setTimeout(()=>{
+                preloader.style.opacity = '0';
+            }, 2000);
+        }
+    };
+    for( let i =0; i < imagesCount; i++ ){
+        let imageClone = new Image();
+        imageClone.onload = imageLoaded;
+        imageClone.onerror = imageLoaded;
+        imageClone.src = images[i].src;
+    }
+    
+
+    return {
+        init: imageLoaded,
+    };
+})();
+module.exports = preloader.init;
 
 /***/ })
 /******/ ]);
