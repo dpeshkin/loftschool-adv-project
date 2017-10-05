@@ -16,13 +16,23 @@ const preloader = (function () {
             }, 1000);  
         }
     };
+
     for( let i =0; i < imagesCount; i++ ){
-        let imageClone = new Image();
-        imageClone.onload = imageLoaded;
-        imageClone.onerror = imageLoaded;
-        imageClone.src = images[i].src;
+        let src = images[i].src;
+        var loadImage = function(url){
+            return new Promise((resolve, reject) => {
+                let img = new Image();
+                img.onload = resolve;
+                img.onerror = reject;
+                img.src = url;
+            });
+        };
+        const imgPromise = loadImage(src);
+        imgPromise.then(
+            ()=>imageLoaded(),
+            ()=>console.log('ERROR image '+src+' not loaded')
+        );
     }
-    
 
     return {
         init: imageLoaded,
