@@ -375,7 +375,10 @@ const preloader = (function () {
         if(imagesLoaded >= imagesCount){
             setTimeout(()=>{
                 preloader.style.opacity = '0';
-            }, 2000);
+                setTimeout(()=>{
+                    preloader.style.zIndex = '-1';
+                }, 1000);
+            }, 1000);  
         }
     };
     for( let i =0; i < imagesCount; i++ ){
