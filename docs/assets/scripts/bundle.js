@@ -378,7 +378,7 @@ const preloader = (function () {
             let dasharrayLenght = element.getAttribute('r')*2*Math.PI;
             setTimeout( () => {
                 element.style.strokeDasharray = percent/100*dasharrayLenght + ', ' + dasharrayLenght;
-            }, 1000);
+            }, 500);
         });
         if(imagesLoaded >= imagesCount){
             setTimeout( () => {
@@ -386,7 +386,7 @@ const preloader = (function () {
                 setTimeout( () => {
                     preloader.style.zIndex = '-1';
                 }, 1000);
-            }, 1000);  
+            }, 3000);  
         }
     };
     const imageLoaded = () =>{
