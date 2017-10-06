@@ -15,7 +15,16 @@ html
     body
         .preloader
             .loader
-                span.loaded 0%
+                .loader__spinner
+                    svg(class="circles circles_preloader", viewBox="0 0 110 110")
+                        circle(r="34", cx="50%", cy="50%", transform="rotate(-90 55 55)", class="circle__preloader circle__preloader-first")
+                        circle(r="40", cx="50%", cy="50%", transform="rotate(-100 55 55)", class="circle__preloader circle__preloader-second")
+                        circle(r="46", cx="50%", cy="50%", transform="rotate(-110 55 55)", class="circle__preloader circle__preloader-third")
+                .loader__text
+                    span.loaded 0%
+
+
+
         .wrapper
             block content
 

@@ -3,6 +3,31 @@
     stroke-width: 20;
 }
 
+.circles_preloader {
+    stroke-width: 2;
+}
+
+.circle__preloader{
+    stroke: $white-color;
+    stroke-dasharray: 0% 100%;
+    
+
+    &-first {
+        transition: stroke-dasharray 1s;
+    };
+    &-second {
+        opacity: .8;
+        transition: stroke-dasharray 2s;
+    };
+    &-third {
+        opacity: .6;
+        transition: stroke-dasharray 3s;
+
+    };
+    
+}
+
+
 .circle__first {
     stroke: #dfdcd5;
 }

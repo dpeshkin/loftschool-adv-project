@@ -10,7 +10,16 @@
   </head>
   <body>
     <div class="preloader">
-      <div class="loader"><span class="loaded">0%</span></div>
+      <div class="loader">
+        <div class="loader__spinner">
+          <svg class="circles circles_preloader" viewBox="0 0 110 110">
+            <circle class="circle__preloader circle__preloader-first" r="34" cx="50%" cy="50%" transform="rotate(-90 55 55)"></circle>
+            <circle class="circle__preloader circle__preloader-second" r="40" cx="50%" cy="50%" transform="rotate(-100 55 55)"></circle>
+            <circle class="circle__preloader circle__preloader-third" r="46" cx="50%" cy="50%" transform="rotate(-110 55 55)"></circle>
+          </svg>
+        </div>
+        <div class="loader__text"><span class="loaded">0%</span></div>
+      </div>
     </div>
     <div class="wrapper">
       <section class="section header parallax-scroll">
