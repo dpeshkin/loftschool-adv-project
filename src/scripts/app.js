@@ -6,6 +6,7 @@ const highlight = require('./modules/highlightNav.js');
 const parallax = require('./modules/parallax.js');
 const blur = require('./modules/blur.js');
 const preloader = require('./modules/preloader.js');
+const formActions = require('./modules/formActions.js');
 
 navToggle();
 flipperRotate();
@@ -15,3 +16,4 @@ highlight();
 parallax();
 blur();
 preloader();
+formActions();

@@ -82,26 +82,28 @@
                   <div class="section-title__subheader section-title__subheader_login">Авторизуйтесь</div>
                 </div>
                 <div class="welcome__login-form">
-                  <form class="form" id="login">
+                  <form class="form" id="login" action="" method="post">
                     <div class="form__field">
-                      <input class="form__input form__input_login" type="login" placeholder="Логин">
+                      <input class="form__input form__input_login" type="login" name="login" placeholder="Логин">
                       <div class="form__field-icon">
                         <svg class="icon icon_fill_dark-grey">
                           <use xlink:href="assets/images/icons/sprite.svg#login"></use>
                         </svg>
                       </div>
+                      <div class="form__error"><span>Введите логин!</span></div>
                     </div>
                     <div class="form__field">
-                      <input class="form__input form__input_login" type="password" placeholder="Пароль">
+                      <input class="form__input form__input_login" type="password" name="password" placeholder="Пароль">
                       <div class="form__field-icon">
                         <svg class="icon icon_fill_dark-grey">
                           <use xlink:href="assets/images/icons/sprite.svg#password"></use>
                         </svg>
                       </div>
+                      <div class="form__error"><span>Введите пароль!</span></div>
                     </div>
                     <div class="form__line">
                       <div class="form__checkbox">
-                        <input class="form__c" type="checkbox" id="robot">
+                        <input class="form__c" type="checkbox" id="robot" name="robot">
                         <label for="robot">Я человек
                           <div class="checkbox-fake">
                             <svg class="icon icon_fill_white">
@@ -114,7 +116,7 @@
                     <div class="form__line-title">Вы точно не робот?</div>
                     <div class="form__line">
                       <div class="form__radio">
-                        <input type="radio" id="robot-radio-1" name="robot-radio">
+                        <input class="form__c" type="radio" id="robot-radio-1" name="robot-radio">
                         <label for="robot-radio-1">Да
                           <div class="radio-fake"></div>
                         </label>

@@ -128,13 +128,19 @@ block content
                         .feedback__header
                             .section-title__subheader.section-title__subheader_form Связаться со мной
                         .feedback__form
-                            form(id='feedback-form', class='form')
+                            form(id='feedback-form', class='form', method = 'POST', action = '')
                                 .form__field
-                                    input(type='text', id='name', placeholder='Имя', class='form__input')
+                                    input(type='text', id='name', name ='name', placeholder='Имя', class='form__input')
+                                    .form__error
+                                        span Введите ваше имя
                                 .form__field
-                                    input(type='enail', id='email', placeholder='Email', class='form__input')
+                                    input(type='email', id='email', name = 'email', placeholder='Email', class='form__input')
+                                    .form__error
+                                        span Введите ваш email
                                 .form__field
-                                    textarea(id='message', rows='3', class='form__input', resize: none, placeholder='Ваше сообщение')
+                                    textarea(type='text', id='message', name = 'message', rows='3', class='form__input', resize: none, placeholder='Ваше сообщение')
+                                    .form__error
+                                        span Введите ваше сообщение
                     .feedback__buttons
                         button(form='feedback-form', type='submit', class='btn btn_form') Отправить
                         button(form='feedback-form', type='reset', class='btn btn_form') Очистить

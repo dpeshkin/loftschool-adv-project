@@ -33,18 +33,22 @@ block content
                         .welcome__title
                             .section-title__subheader.section-title__subheader_login Авторизуйтесь
                         .welcome__login-form
-                            form(id='login', class='form')
+                            form(id='login', class='form', action ='', method = 'post')
                                 .form__field
-                                    input.form__input.form__input_login(type = "login", placeholder='Логин')
+                                    input.form__input.form__input_login(type = "login", name ='login', placeholder='Логин')
                                     .form__field-icon
-                                        +icon('icon_fill_dark-grey', 'login')  
+                                        +icon('icon_fill_dark-grey', 'login')
+                                    .form__error
+                                        span Введите логин!
                                 .form__field
-                                    input.form__input.form__input_login(type="password", placeholder='Пароль')
+                                    input.form__input.form__input_login(type="password", name= 'password', placeholder='Пароль')
                                     .form__field-icon
                                         +icon('icon_fill_dark-grey', 'password')
+                                    .form__error
+                                        span Введите пароль!
                                 .form__line
                                     .form__checkbox
-                                        input(type="checkbox" id='robot' class="form__c")
+                                        input(type="checkbox", id='robot', name='robot', class="form__c")
                                         label(for='robot') Я человек
                                             .checkbox-fake
                                                 +icon('icon_fill_white', 'check')
@@ -52,11 +56,11 @@ block content
                                 .form__line-title Вы точно не робот?
                                 .form__line
                                     .form__radio
-                                        input(type='radio' id='robot-radio-1' name='robot-radio')
+                                        input(type='radio', id='robot-radio-1', name='robot-radio', class='form__c')
                                         label(for='robot-radio-1') Да
                                             .radio-fake
                                     .form__radio
-                                        input(type='radio' id='robot-radio-2' name='robot-radio')
+                                        input(type='radio', id='robot-radio-2', name='robot-radio')
                                         label(for='robot-radio-2') Не уверен
                                             .radio-fake
                         .welcome__back-buttons
