@@ -3,7 +3,8 @@ const formActions = (function(){
     const formFields = form.querySelectorAll('.form__input');
     const formCheckboxes = form.querySelectorAll('.form__c');
     const formAction = form.getAttribute('action');
-    const formMethod = form.getAttribute('method'); 
+    const formMethod = form.getAttribute('method');
+    const notification = document.querySelector('.notification');
     const checkInput = (input) => {
         if (input.value.trim() === ''){
             input.classList.add('form__input_empty');
@@ -31,6 +32,15 @@ const formActions = (function(){
         });
     });
 
+    if(notification){
+        const closeNotification = notification.querySelector('.btn');
+        closeNotification.addEventListener('click', (e) => {
+            e.preventDefault();
+            notification.classList.remove('notification_visible');
+            form.reset();
+        });
+    }
+
     form.addEventListener('submit', (e) =>{
         e.preventDefault();
         [].forEach.call(formFields, checkInput);
@@ -40,7 +50,7 @@ const formActions = (function(){
             const xhr = new XMLHttpRequest();
             xhr.open(formMethod, formAction);
             xhr.send(formData);
-            form.reset();
+            if(notification) notification.classList.add('notification_visible');
         }
     });
 

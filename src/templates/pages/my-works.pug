@@ -141,14 +141,20 @@ block content
                                     textarea(type='text', id='message', name = 'message', rows='3', class='form__input', resize: none, placeholder='Ваше сообщение')
                                     .form__error
                                         span Введите ваше сообщение
+                    .notification
+                        .notification__text Сообщение отправлено
+                        .notification__button
+                            a.btn.btn_show(href='#') Закрыть
                     .feedback__buttons
                         button(form='feedback-form', type='submit', class='btn btn_form') Отправить
                         button(form='feedback-form', type='reset', class='btn btn_form') Очистить
+                    
+                    
         
             .mentions__scroll.scroll
                 a.scroll__link.scroll-to(href='#')
                     .scroll__icon
-                        +icon('icon_fill_white', 'portf_arrow_up')    
+                        +icon('icon_fill_white', 'portf_arrow_up')
 
     footer.footer.footer_darken
         .footer__row
@@ -164,3 +170,4 @@ block content
             .footer__row-item
                 .footer__copyright © Дмитрий Пешкин | создано в LoftSchool | 2017
     
+
