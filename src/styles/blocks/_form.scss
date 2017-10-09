@@ -44,7 +44,7 @@
     border-color: $red-color;
 
     & + .form__field-icon {
-        
+
         svg {
             fill: $red-color;
         }
@@ -201,7 +201,8 @@
 
 .form__c_empty {
     & ~ label {
-        .checkbox-fake, .radio-fake {
+        .checkbox-fake,
+        .radio-fake {
             border-color: $red-color;
         }
     }

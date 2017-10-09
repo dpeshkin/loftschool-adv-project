@@ -40,3 +40,29 @@ mixin icon(iconModifier, svgId)
 mixin blog-article(articleHeader, articleDate)
     .blog__article-header= articleHeader
     .blog__article-date= articleDate
+
+mixin project-list (items)
+    ul.project__list
+        each item in items
+            li.project__item
+                .project__title
+                    .section-title__subheader= item.title
+                .project__technologies= item.tech
+                .project__link
+                    a.btn.btn_show(href=item.link)
+                        .btn__icon
+                            +icon('icon_fill_white','link')
+                        span Посмотреть сайт
+
+mixin image-list (items)
+    ul.image__list
+        each item in items
+            .image__item
+                img.responsive-img(src=item.img)
+    
+
+mixin controls-bg-list (items)
+    ul.controls__bg-list
+        each item in items
+            .controls__bg-item
+                img.responsive-img(src=item.img)

@@ -52,35 +52,28 @@ block content
             .slider
                 .slider__description
                     .project
-                        .project__title
-                            .section-title__subheader Сайт школы онлайн образования
-                        .project__technologies HTML, CSS, JAVASCRIPT
-                        .project__link
-                            a.btn.btn_show(href='#')
-                                .btn__icon
-                                    +icon('icon_fill_white','link')
-                                span Посмотреть сайт
-
-
+                        +project-list(projects)
+                    
                 .slider__image
-                    img.responsive-img(src='assets/images/my-works/work-1.png')
-                .slider__controls.controls
-                    .controls__left
+                    +image-list(projects)
+                    
+                .slider__controls
+                    .controls__prev.controls
                         .controls__caption
                             .controls__icon
                                 +icon('icon_fill_white', 'portf_arrow_down')
                                 .controls__icon-bg
                                     +icon('icon_fill_black', 'portf_arrow_down')
                         .controls__bg
-                            img.responsive-img(src='assets/images/my-works/work-2.jpg')
-                    .controls__right
+                            +controls-bg-list(projects)
+                    .controls__next.controls
                         .controls__caption
                             .controls__icon
                                 +icon('icon_fill_white', 'portf_arrow_up')
                                 .controls__icon-bg
                                     +icon('icon_fill_blach', 'portf_arrow_up')
                         .controls__bg
-                            img.responsive-img(src='assets/images/my-works/work-3.jpg')
+                            +controls-bg-list(projects)
 
     section.section.mentions
         .mentions__content

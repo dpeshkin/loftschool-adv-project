@@ -1,4 +1,4 @@
-const formActions = (function(){
+const formActions = function(){
     const form = document.querySelector('form');
     const formFields = form.querySelectorAll('.form__input');
     const formCheckboxes = form.querySelectorAll('.form__c');
@@ -53,9 +53,11 @@ const formActions = (function(){
             if(notification) notification.classList.add('notification_visible');
         }
     });
+};
 
-    return {
-        init: function(){},
-    };
-})();
-module.exports = formActions.init;
+const formActionsInit = () => {
+    if(document.querySelector('form'))
+        formActions();
+};
+
+module.exports = formActionsInit;

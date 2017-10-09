@@ -7,6 +7,7 @@ const parallax = require('./modules/parallax.js');
 const blur = require('./modules/blur.js');
 const preloader = require('./modules/preloader.js');
 const formActions = require('./modules/formActions.js');
+const slider = require('./modules/slider.js');
 
 navToggle();
 flipperRotate();
@@ -17,3 +18,4 @@ parallax();
 blur();
 preloader();
 formActions();
+slider();
