@@ -124,8 +124,8 @@ function flipperRotate(e) {
 
 function flipperInit() {
     if(document.querySelector('.flipper-rotate')){
-        var btns = document.querySelectorAll('.flipper-rotate');
-        for (var i = 0; i < btns.length; i++) {
+        let btns = document.querySelectorAll('.flipper-rotate');
+        for (let i = 0; i < btns.length; i++) {
             btns[i].addEventListener('click', function(e) {
                 flipperRotate(e);
             });
@@ -139,10 +139,10 @@ module.exports = flipperInit;
 /* 3 */
 /***/ (function(module, exports) {
 
-var scrollToElement = function() {
-    var smoothScroll = function ( anchor ) {
-        var getTargetOffsetTop = function ( anchor ) {
-            var location = 0;
+const scrollToElement = function() {
+    const smoothScroll = function ( anchor ) {
+        const getTargetOffsetTop = function ( anchor ) {
+            let location = 0;
             if (anchor.offsetParent) {
                 do {
                     location += anchor.offsetTop;
@@ -151,35 +151,36 @@ var scrollToElement = function() {
             }
             return location >= 0 ? location : 0;
         };
-        var animateScroll = function () {
+        const animateScroll = function () {
             window.scrollBy(0, increments);
             stopAnimation();
         };
-        var stopAnimation = function () {
-            var currentPosition = window.pageYOffset;
+        const stopAnimation = function () {
+            const currentPosition = window.pageYOffset;
             if ( increments < 0 && currentPosition  <= endLocation+increments || increments > 0 && currentPosition  >= endLocation-increments || ((window.innerHeight + currentPosition) >= document.body.offsetHeight)) {
                 clearInterval(runAnimation);
             }
         };
-        var startLocation = window.pageYOffset;
-        var endLocation = getTargetOffsetTop( anchor );
-        var distance = endLocation - startLocation;
-        var duration = 500;
-        var increments = distance/(duration/16);
+        const startLocation = window.pageYOffset;
+        const endLocation = getTargetOffsetTop( anchor );
+        const distance = endLocation - startLocation;
+        const duration = 500;
+        const increments = distance/(duration/16);
 
         console.log(startLocation, endLocation, distance, increments); 
 
-        var runAnimation = setInterval(animateScroll, 16);   
+        const runAnimation = setInterval(animateScroll, 16);   
           
     };
         
-    var scrollToggle = document.querySelectorAll('.scroll-to');
+    const scrollToggle = document.querySelectorAll('.scroll-to');
     [].forEach.call(scrollToggle, function (toggle) {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
-            var href = toggle.getAttribute('href');
+            const href = toggle.getAttribute('href');
+            let Target;
             if (href === '#'|| undefined) {
-                var Target = document.body;
+                Target = document.body;
             } else {
                 Target = document.querySelector(href);
             }
@@ -199,19 +200,19 @@ module.exports = scrollToElement;
 /***/ (function(module, exports) {
 
 
-var Sticky = (function () {
+const Sticky = (function () {
 
     const activeClass = 'sticky';
 
-    var Sticky = {
+    const Sticky = {
         element: null,
         elementOffsetTop: 0, 
         addEvents: function () {
             window.addEventListener('scroll', this.onScroll.bind(this));
         },
         getOffsetTop: function () {
-            var element = this.element;
-            var position = 0;
+            let element = this.element;
+            let position = 0;
             if (element.offsetParent) {
                 do {
                     position += element.offsetTop;
@@ -244,8 +245,8 @@ var Sticky = (function () {
     return Sticky;
 })();
 
-var sticky = function() {
-    var element = document.querySelector('.blog__nav');
+const sticky = function() {
+    const element = document.querySelector('.blog__nav');
     if (element)
         Sticky.init(element);
 };
@@ -258,11 +259,11 @@ module.exports = sticky;
 /***/ (function(module, exports) {
 
 var highlighter = (function () {
-    var articles = document.querySelectorAll('.blog__article');
-    var article = {};
-    var i = 0;
+    const articles = document.querySelectorAll('.blog__article');
+    let article = {};
+    let i = 0;
 
-    var scrollSpy = function () {
+    const scrollSpy = function () {
         window.addEventListener('scroll', function () {
             [].forEach.call(articles, function (e) {
                 article[e.id] = {
@@ -282,7 +283,6 @@ var highlighter = (function () {
     return {
         scroll: scrollSpy,
     };
-
 })();
 
 module.exports = highlighter.scroll; // метод или функцию надо экспортировать без скобок
@@ -292,16 +292,16 @@ module.exports = highlighter.scroll; // метод или функцию над�
 /* 6 */
 /***/ (function(module, exports) {
 
-var parallaxMouseMove = document.querySelector('.parallax-mm');
-var parallaxScroll = document.querySelector('.parallax-scroll');
+const parallaxMouseMove = document.querySelector('.parallax-mm');
+const parallaxScroll = document.querySelector('.parallax-scroll');
     
-var moveLayers = function (e) {
-    var layers = parallaxMouseMove.children;
-    var initialX = -e.pageX;
-    var initialY = -e.pageY;
+const moveLayers = function (e) {
+    const layers = parallaxMouseMove.children;
+    const initialX = -e.pageX;
+    const initialY = -e.pageY;
 
     [].slice.call(layers).forEach(function (layer, index) {
-        var
+        const
             divider = index / 100,
             positionX = initialX * divider,
             positionY = initialY * divider,
@@ -315,12 +315,12 @@ var moveLayers = function (e) {
 
 };
 
-var scrollLayers = function() {
-    var layerPhoto = parallaxScroll.querySelector('.header__content');
-    var layerBg = parallaxScroll.querySelector('.header__bg');
-    var scrollLenght = window.pageYOffset;
+const scrollLayers = function() {
+    const layerPhoto = parallaxScroll.querySelector('.header__content');
+    const layerBg = parallaxScroll.querySelector('.header__bg');
+    const scrollLenght = window.pageYOffset;
 
-    var move = function (element, scroll, integer) {
+    const move = function (element, scroll, integer) {
         var position = Math.round(scroll * -integer)+'px';
         element.style.transform = 'translateY(' + position + ')';
     };
@@ -331,7 +331,7 @@ var scrollLayers = function() {
         move(layerBg, scrollLenght, .2);
 };
 
-var parallax = function () {
+const parallax = function () {
     if (parallaxMouseMove)
         window.addEventListener('mousemove', moveLayers);
     if (parallaxScroll)

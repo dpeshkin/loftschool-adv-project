@@ -1,13 +1,13 @@
-var parallaxMouseMove = document.querySelector('.parallax-mm');
-var parallaxScroll = document.querySelector('.parallax-scroll');
+const parallaxMouseMove = document.querySelector('.parallax-mm');
+const parallaxScroll = document.querySelector('.parallax-scroll');
     
-var moveLayers = function (e) {
-    var layers = parallaxMouseMove.children;
-    var initialX = -e.pageX;
-    var initialY = -e.pageY;
+const moveLayers = function (e) {
+    const layers = parallaxMouseMove.children;
+    const initialX = -e.pageX;
+    const initialY = -e.pageY;
 
     [].slice.call(layers).forEach(function (layer, index) {
-        var
+        const
             divider = index / 100,
             positionX = initialX * divider,
             positionY = initialY * divider,
@@ -21,12 +21,12 @@ var moveLayers = function (e) {
 
 };
 
-var scrollLayers = function() {
-    var layerPhoto = parallaxScroll.querySelector('.header__content');
-    var layerBg = parallaxScroll.querySelector('.header__bg');
-    var scrollLenght = window.pageYOffset;
+const scrollLayers = function() {
+    const layerPhoto = parallaxScroll.querySelector('.header__content');
+    const layerBg = parallaxScroll.querySelector('.header__bg');
+    const scrollLenght = window.pageYOffset;
 
-    var move = function (element, scroll, integer) {
+    const move = function (element, scroll, integer) {
         var position = Math.round(scroll * -integer)+'px';
         element.style.transform = 'translateY(' + position + ')';
     };
@@ -37,7 +37,7 @@ var scrollLayers = function() {
         move(layerBg, scrollLenght, .2);
 };
 
-var parallax = function () {
+const parallax = function () {
     if (parallaxMouseMove)
         window.addEventListener('mousemove', moveLayers);
     if (parallaxScroll)

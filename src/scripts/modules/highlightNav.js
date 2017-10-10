@@ -1,9 +1,9 @@
 var highlighter = (function () {
-    var articles = document.querySelectorAll('.blog__article');
-    var article = {};
-    var i = 0;
+    const articles = document.querySelectorAll('.blog__article');
+    let article = {};
+    let i = 0;
 
-    var scrollSpy = function () {
+    const scrollSpy = function () {
         window.addEventListener('scroll', function () {
             [].forEach.call(articles, function (e) {
                 article[e.id] = {
@@ -23,7 +23,6 @@ var highlighter = (function () {
     return {
         scroll: scrollSpy,
     };
-
 })();
 
 module.exports = highlighter.scroll; // метод или функцию надо экспортировать без скобок

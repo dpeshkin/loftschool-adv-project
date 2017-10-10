@@ -1,17 +1,17 @@
 
-var Sticky = (function () {
+const Sticky = (function () {
 
     const activeClass = 'sticky';
 
-    var Sticky = {
+    const Sticky = {
         element: null,
         elementOffsetTop: 0, 
         addEvents: function () {
             window.addEventListener('scroll', this.onScroll.bind(this));
         },
         getOffsetTop: function () {
-            var element = this.element;
-            var position = 0;
+            let element = this.element;
+            let position = 0;
             if (element.offsetParent) {
                 do {
                     position += element.offsetTop;
@@ -44,8 +44,8 @@ var Sticky = (function () {
     return Sticky;
 })();
 
-var sticky = function() {
-    var element = document.querySelector('.blog__nav');
+const sticky = function() {
+    const element = document.querySelector('.blog__nav');
     if (element)
         Sticky.init(element);
 };

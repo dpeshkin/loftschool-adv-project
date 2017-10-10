@@ -6,8 +6,8 @@ function flipperRotate(e) {
 
 function flipperInit() {
     if(document.querySelector('.flipper-rotate')){
-        var btns = document.querySelectorAll('.flipper-rotate');
-        for (var i = 0; i < btns.length; i++) {
+        let btns = document.querySelectorAll('.flipper-rotate');
+        for (let i = 0; i < btns.length; i++) {
             btns[i].addEventListener('click', function(e) {
                 flipperRotate(e);
             });

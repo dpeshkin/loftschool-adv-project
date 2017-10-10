@@ -1,7 +1,7 @@
-var scrollToElement = function() {
-    var smoothScroll = function ( anchor ) {
-        var getTargetOffsetTop = function ( anchor ) {
-            var location = 0;
+const scrollToElement = function() {
+    const smoothScroll = function ( anchor ) {
+        const getTargetOffsetTop = function ( anchor ) {
+            let location = 0;
             if (anchor.offsetParent) {
                 do {
                     location += anchor.offsetTop;
@@ -10,35 +10,36 @@ var scrollToElement = function() {
             }
             return location >= 0 ? location : 0;
         };
-        var animateScroll = function () {
+        const animateScroll = function () {
             window.scrollBy(0, increments);
             stopAnimation();
         };
-        var stopAnimation = function () {
-            var currentPosition = window.pageYOffset;
+        const stopAnimation = function () {
+            const currentPosition = window.pageYOffset;
             if ( increments < 0 && currentPosition  <= endLocation+increments || increments > 0 && currentPosition  >= endLocation-increments || ((window.innerHeight + currentPosition) >= document.body.offsetHeight)) {
                 clearInterval(runAnimation);
             }
         };
-        var startLocation = window.pageYOffset;
-        var endLocation = getTargetOffsetTop( anchor );
-        var distance = endLocation - startLocation;
-        var duration = 500;
-        var increments = distance/(duration/16);
+        const startLocation = window.pageYOffset;
+        const endLocation = getTargetOffsetTop( anchor );
+        const distance = endLocation - startLocation;
+        const duration = 500;
+        const increments = distance/(duration/16);
 
         console.log(startLocation, endLocation, distance, increments); 
 
-        var runAnimation = setInterval(animateScroll, 16);   
+        const runAnimation = setInterval(animateScroll, 16);   
           
     };
         
-    var scrollToggle = document.querySelectorAll('.scroll-to');
+    const scrollToggle = document.querySelectorAll('.scroll-to');
     [].forEach.call(scrollToggle, function (toggle) {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
-            var href = toggle.getAttribute('href');
+            const href = toggle.getAttribute('href');
+            let Target;
             if (href === '#'|| undefined) {
-                var Target = document.body;
+                Target = document.body;
             } else {
                 Target = document.querySelector(href);
             }
