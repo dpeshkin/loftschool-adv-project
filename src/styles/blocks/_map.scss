@@ -1,7 +1,5 @@
 .map {
     height: 100vh;
-    background: url('../images/map_bg.jpg') center top;
-    background-size: cover;
 
     @include phones {
         min-height: 925px;
