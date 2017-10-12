@@ -51,6 +51,7 @@
     }
 
     & ~ .form__error {
+        opacity: 1;
         display: block;
     }
 }
@@ -182,6 +183,8 @@
     color: $white-color;
     font-weight: 500;
     white-space: nowrap;
+    opacity: 0;
+    transition: opacity .5s;
     display: none;
 
     &::before {
@@ -201,6 +204,7 @@
 }
 
 .form__c_empty {
+
     & ~ label {
         .checkbox-fake,
         .radio-fake {
@@ -208,7 +212,21 @@
             border-width: 4px;
         }
     }
-    & ~ .form__error {
+
+    & ~ .check__error {
+        opacity: 1;
         display: block;
     }
+}
+.check__error {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    transform: translateX(-30px);
+    color: $red-color;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity .5s;
+    display: none;
 }

@@ -2,6 +2,7 @@ const formActions = function(){
     const form = document.querySelector('form');
     const formFields = form.querySelectorAll('.form__input');
     const formCheckboxes = form.querySelectorAll('.form__c');
+    const wrongRadio = document.getElementById('robot-radio-2');
     const formAction = form.getAttribute('action');
     const formMethod = form.getAttribute('method');
     const notification = document.querySelector('.notification');
@@ -13,20 +14,21 @@ const formActions = function(){
         }
     };
     const checkBox = (input) => {
-        if (!input.checked){
+        if (!input.checked || wrongRadio.checked){
             input.classList.add('form__c_empty');
         }else{
             input.classList.remove('form__c_empty');
         }
     };
-
+    wrongRadio.onclick = () => {
+        [].forEach.call(formCheckboxes, checkBox);
+    };
     [].forEach.call(formFields, function(element){
         element.addEventListener('blur', function(){
             checkInput(element);
         });
     });
-
-    [].forEach.call(formCheckboxes, function(element){
+    formCheckboxes.forEach(function(element){
         element.addEventListener('click', function(){
             checkBox(element);
         });
