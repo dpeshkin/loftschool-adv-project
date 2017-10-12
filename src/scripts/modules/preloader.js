@@ -21,7 +21,7 @@ const preloader = (function () {
                 setTimeout( () => {
                     preloader.style.zIndex = '-1';
                 }, 1000);
-            }, 3000);  
+            }, 2000);  
         }
     };
     const imageLoaded = () =>{
@@ -38,7 +38,7 @@ const preloader = (function () {
             const imgPromise = loadImage(src);
             imgPromise.then(
                 () => preloaderIncrement(),
-                () => console.log('ERROR image '+src+' not loaded')
+                () => {preloaderIncrement(), console.log('ERROR image '+src+' not loaded');}
             );
         }
     };

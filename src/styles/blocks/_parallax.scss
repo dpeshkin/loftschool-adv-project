@@ -30,15 +30,25 @@
     &_10 {
         left: 0;
         transform: translateX(-10%);
+        animation-duration: 60s;
     }
 
     &_7 {
         top: 15%;
-        transform: translateX(-80%);
+        animation-duration: 100s;
     }
 
     &_4 {
         top: 0;
         left: 80%;
+        animation-duration: 120s;
+    }
+
+    &_4,
+    &_7,
+    &_10 {
+        animation-name: fly;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
     }
 }

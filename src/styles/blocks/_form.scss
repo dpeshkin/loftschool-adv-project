@@ -114,6 +114,7 @@
 
 .form__radio {
     margin-right: 40px;
+    position: relative;
 
     &:last-child {
         margin-right: 0;
@@ -204,6 +205,10 @@
         .checkbox-fake,
         .radio-fake {
             border-color: $red-color;
+            border-width: 4px;
         }
+    }
+    & ~ .form__error {
+        display: block;
     }
 }

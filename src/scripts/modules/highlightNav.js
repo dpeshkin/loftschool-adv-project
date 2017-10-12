@@ -12,7 +12,7 @@ var highlighter = (function () {
                 };
             });
             for (i in article) {
-                if (article[i].position <= 30 && article[i].position >= -article[i].height){
+                if (article[i].position <= window.innerHeight*0.3 && article[i].position >= -article[i].height){
                     if(document.querySelector('.nav__link_blog-active'))
                         document.querySelector('.nav__link_blog-active').classList.remove('nav__link_blog-active');
                     document.querySelector('a[href*=' + i + ']').classList.add('nav__link_blog-active'); // не подсвечивается последняя ссылка, что логично, но надо это поправить
