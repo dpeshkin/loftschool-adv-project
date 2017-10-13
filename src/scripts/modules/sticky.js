@@ -1,8 +1,8 @@
 const sticky = (() => {
     const element = document.querySelector('.blog__nav');
-    const elementOffsetTop = element.getBoundingClientRect().top + pageYOffset;
-    
+
     const scrollSpy = () => {
+        const elementOffsetTop = element.getBoundingClientRect().top + pageYOffset;
         window.addEventListener('scroll', () => {
             let windowPosition = window.scrollY;
             if (elementOffsetTop < windowPosition) {
