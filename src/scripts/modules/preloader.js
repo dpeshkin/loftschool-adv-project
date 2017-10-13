@@ -1,4 +1,4 @@
-const preloader = (function () {
+const preloader = (() => {
     const images = document.images;
     const imagesCount = images.length;
     let imagesLoaded = 0;

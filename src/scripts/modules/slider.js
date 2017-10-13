@@ -1,4 +1,4 @@
-const slider = ()=>{
+const slider = () => {
     const slider = document.querySelector('.slider');
     const controls = document.querySelectorAll('.controls');
     const projectList = slider.querySelectorAll('.project__item');
