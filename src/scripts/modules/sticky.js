@@ -4,8 +4,7 @@ const sticky = (() => {
     const scrollSpy = () => {
         const elementOffsetTop = element.getBoundingClientRect().top + pageYOffset;
         window.addEventListener('scroll', () => {
-            let windowPosition = window.scrollY;
-            if (elementOffsetTop < windowPosition) {
+            if (elementOffsetTop - 20 <= pageYOffset) {
                 element.classList.add('sticky');
             } else {
                 element.classList.remove('sticky');

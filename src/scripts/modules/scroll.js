@@ -1,54 +1,56 @@
-const scrollToElement = function() {
-    const smoothScroll = function ( anchor ) {
-        const getTargetOffsetTop = function ( anchor ) {
-            let location = 0;
-            if (anchor.offsetParent) {
-                do {
-                    location += anchor.offsetTop;
-                    anchor = anchor.offsetParent;
-                } while (anchor);
+const scrollToElement = () => {
+    let flag = true;
+    const smoothScroll = (anchor) => {
+        const getTargetOffsetTop = (anchor) => { // получаем координаты колнечной точки
+            let location = anchor.getBoundingClientRect().top + window.pageYOffset;
+            return location;
+        };
+        const cantScroll = () => { // проверяем текущее положение страницы и якоря, возможность скролла
+            if (Math.abs(endLocation - pageYOffset) <= Math.abs(increment/2) ||
+                document.body.offsetHeight - window.innerHeight - pageYOffset < increment){
+                flag = true; // по окончанию скролла
+                return true;
             }
-            return location >= 0 ? location : 0;
         };
-        const animateScroll = function () {
-            window.scrollBy(0, increments);
-            stopAnimation();
+        const animateScroll = () => {
+            if (!cantScroll()) {
+                window.scrollBy(0, increment); // делаем шаг на инкремент
+            }
+            stopAnimation(); // останавливаем анимацию
         };
-        const stopAnimation = function () {
-            const currentPosition = window.pageYOffset;
-            if ( increments < 0 && currentPosition  <= endLocation+increments || increments > 0 && currentPosition  >= endLocation-increments || ((window.innerHeight + currentPosition) >= document.body.offsetHeight)) {
+        const stopAnimation = () => {
+            if (cantScroll()) {
                 clearInterval(runAnimation);
             }
         };
-        const startLocation = window.pageYOffset;
-        const endLocation = getTargetOffsetTop( anchor );
+        
+        const startLocation = pageYOffset;
+        const endLocation = getTargetOffsetTop(anchor);
         const distance = endLocation - startLocation;
-        const duration = 500;
-        const increments = distance/(duration/16);
-
-        console.log(startLocation, endLocation, distance, increments); 
-
-        const runAnimation = setInterval(animateScroll, 16);   
-          
+        const direction = distance/Math.abs(distance);
+        const increment = 10*direction;
+        const runAnimation = setInterval(animateScroll, 9);
     };
         
     const scrollToggle = document.querySelectorAll('.scroll-to');
-    [].forEach.call(scrollToggle, function (toggle) {
-        toggle.addEventListener('click', function(e) {
+    scrollToggle.forEach((toggle) => {
+        toggle.addEventListener('click', (e) => {
             e.preventDefault();
             const href = toggle.getAttribute('href');
-            let Target;
+            let target;
             if (href === '#'|| undefined) {
-                Target = document.body;
+                target = document.body;
             } else {
-                Target = document.querySelector(href);
+                target = document.querySelector(href);
             }
-            smoothScroll(Target); 
+            if(flag){ // проверяем флаг, если false, ничего не будет
+                smoothScroll(target);
+                flag = false; // после запуска анимации
+            }
         });
     });
-
 };
-// почему то не всегда попадаем в нужное место на странице
+
 module.exports = scrollToElement;
 
 

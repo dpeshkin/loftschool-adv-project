@@ -6,17 +6,24 @@ var highlighter = (function () {
     const scrollSpy = function () {
         window.addEventListener('scroll', function () {
             [].forEach.call(articles, function (e) {
-                article[e.id] = {
-                    height: e.offsetHeight, // по идее это свойство надо закешировать, но не знаю как???
-                    position: e.getBoundingClientRect().top,
+                article[e.id] = { // индекс элемента в массиве = его id
+                    position: e.getBoundingClientRect(),
                 };
             });
+            const highLightNavItem = () => {
+                if(document.querySelector('.nav__link_blog-active')){
+                    document.querySelector('.nav__link_blog-active').classList.remove('nav__link_blog-active');
+                }
+                document.querySelector('a[href*=' + i + ']').classList.add('nav__link_blog-active');
+            };
             for (i in article) {
-                if (article[i].position <= window.innerHeight*0.3 && article[i].position >= -article[i].height){
-                    if(document.querySelector('.nav__link_blog-active'))
-                        document.querySelector('.nav__link_blog-active').classList.remove('nav__link_blog-active');
-                    document.querySelector('a[href*=' + i + ']').classList.add('nav__link_blog-active'); // не подсвечивается последняя ссылка, что логично, но надо это поправить
-                } 
+                if (article[i].position.top <= window.innerHeight*0.2){
+                    highLightNavItem();
+                }
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight-10){  // подсветка последней статьи
+                    i = Object.keys(article)[Object.keys(article).length - 1];
+                    highLightNavItem();
+                }
             }
         });
     };
@@ -25,4 +32,4 @@ var highlighter = (function () {
     };
 })();
 
-module.exports = highlighter.scroll; // метод или функцию надо экспортировать без скобок
+module.exports = highlighter.scroll; 
